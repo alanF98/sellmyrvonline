@@ -370,6 +370,9 @@ if(window.ResizeObserver)cards.slice(0,2).forEach(function(c){new ResizeObserver
 addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
 addEventListener('resize',onScroll);onScroll();
 var f=document.getElementById('f'),p1=document.getElementById('p1'),p2=document.getElementById('p2'),nx=document.getElementById('nx'),bk=document.getElementById('bk'),err=document.getElementById('err'),step=0,sending=false;
+var fy=null;
+f.addEventListener('focusin',function(e){if(fy===null&&/INPUT|TEXTAREA/.test(e.target.tagName))fy=scrollY});
+f.addEventListener('focusout',function(){setTimeout(function(){var a=document.activeElement;if(a&&f.contains(a)&&/INPUT|TEXTAREA/.test(a.tagName))return;if(fy!==null&&Math.abs(scrollY-fy)<300)scrollTo({top:fy,left:0,behavior:'instant'});fy=null},350)});
 function go(n){step=n;p1.hidden=n!==0;p2.hidden=n!==1;bk.hidden=n===0;
 document.getElementById('ft').textContent=n?'How can we reach you?':'A little about your RV';
 document.getElementById('sc').textContent='STEP '+(n+1)+' OF 2';
