@@ -197,6 +197,7 @@ a{color:inherit;text-decoration:none}
 .pband,.whys{padding-block:48px}
 .js .c1,.js .c2{margin-bottom:50vh;margin-bottom:50svh}
 .field input,.field textarea{font-size:16px}
+.typing .c2,.typing .c3{visibility:hidden}
 .bgrid{grid-template-columns:1fr 1fr;gap:30px 22px}
 .cinner{flex-direction:column;align-items:flex-start}
 .cinner h2{font-size:38px}
@@ -371,8 +372,10 @@ addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationF
 addEventListener('resize',onScroll);onScroll();
 var f=document.getElementById('f'),p1=document.getElementById('p1'),p2=document.getElementById('p2'),nx=document.getElementById('nx'),bk=document.getElementById('bk'),err=document.getElementById('err'),step=0,sending=false;
 var fy=null;
-f.addEventListener('focusin',function(e){if(fy===null&&/INPUT|TEXTAREA/.test(e.target.tagName))fy=scrollY});
-f.addEventListener('focusout',function(){setTimeout(function(){var a=document.activeElement;if(a&&f.contains(a)&&/INPUT|TEXTAREA/.test(a.tagName))return;if(fy!==null&&Math.abs(scrollY-fy)<300)scrollTo({top:fy,left:0,behavior:'instant'});fy=null},350)});
+function endTyping(t){var a=document.activeElement;if(a&&f.contains(a)&&/INPUT|TEXTAREA/.test(a.tagName))return;var vv=window.visualViewport;if(vv&&innerHeight-vv.height>80&&t<15){setTimeout(function(){endTyping(t+1)},100);return}
+if(fy!==null&&Math.abs(scrollY-fy)<300)scrollTo({top:fy,left:0,behavior:'instant'});fy=null;document.body.classList.remove('typing')}
+f.addEventListener('focusin',function(e){if(/INPUT|TEXTAREA/.test(e.target.tagName)){if(fy===null)fy=scrollY;document.body.classList.add('typing')}});
+f.addEventListener('focusout',function(){setTimeout(function(){endTyping(0)},50)});
 function go(n){step=n;p1.hidden=n!==0;p2.hidden=n!==1;bk.hidden=n===0;
 document.getElementById('ft').textContent=n?'How can we reach you?':'A little about your RV';
 document.getElementById('sc').textContent='STEP '+(n+1)+' OF 2';
