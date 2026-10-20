@@ -175,7 +175,7 @@ a{color:inherit;text-decoration:none}
 @media (max-width:1050px){.sw{width:calc(100% - 56px)}.hero h1{font-size:74px}.hero h1 span{font-size:56px}.offer{gap:40px}}
 @media (max-width:700px){
 .sw{width:calc(100% - 40px)}
-.hero{height:calc(100svh - 50px);min-height:600px;max-height:780px;padding-top:86px}
+.hero{height:calc(100svh - 150px);min-height:560px;max-height:780px;padding-top:86px}
 .himg{object-position:72% center}
 .hcontent{padding-block:35px 55px}
 .pill{padding:8px 12px;font-size:8px}
@@ -195,7 +195,7 @@ a{color:inherit;text-decoration:none}
 .hrow{display:block}.hrow>a{margin-top:18px}
 .sgrid{grid-template-columns:1fr;gap:30px}
 .pband,.whys{padding-block:48px}
-.js .hero{margin-bottom:40vh;margin-bottom:40svh}.js .c1,.js .c2{margin-bottom:50vh;margin-bottom:50svh}
+.js .c1,.js .c2{margin-bottom:50vh;margin-bottom:50svh}
 .bgrid{grid-template-columns:1fr 1fr;gap:30px 22px}
 .cinner{flex-direction:column;align-items:flex-start}
 .cinner h2{font-size:38px}
