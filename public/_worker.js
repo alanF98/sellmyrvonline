@@ -3,7 +3,6 @@ const html = `<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#14110e" id="tc">
 <meta name="color-scheme" content="light">
 <title>Sell your RV with peace of mind | Sell My RV Online</title>
 <meta name="description" content="Get a straightforward cash offer for your RV. Over 30 years of experience, free nationwide pickup, and all paperwork handled.">
@@ -360,10 +359,7 @@ var line=innerHeight*.45,cur='top';['how','contact'].forEach(function(id){var e=
 if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='contact';
 nl.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur)});
 var p=Math.min(1,Math.max(0,scrollY/(hero.offsetHeight*.9)));hero.style.setProperty('--p',(p*.55).toFixed(3));dimCards();
-var mx=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.transform='scaleX('+(mx>0?Math.min(1,Math.max(0,scrollY/mx)):0).toFixed(4)+')';themeBar()}
-var tcm=document.getElementById('tc'),tcl='';
-function themeBar(){var e=document.elementFromPoint(innerWidth/2,2),c='';while(e){c=getComputedStyle(e).backgroundColor;if(c&&c!=='rgba(0, 0, 0, 0)'&&c!=='transparent')break;e=e.parentElement}
-if(c&&c!==tcl){tcl=c;tcm.setAttribute('content',c)}}
+var mx=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.transform='scaleX('+(mx>0?Math.min(1,Math.max(0,scrollY/mx)):0).toFixed(4)+')'}
 var cards=[].slice.call(document.querySelectorAll('.card'));
 function pins(){cards.slice(0,2).forEach(function(c){c.style.top=Math.min(0,(document.getElementById('lvh').offsetHeight||document.documentElement.clientHeight)-c.offsetHeight)+'px'})}
 function dimCards(){var vh=innerHeight;cards.slice(0,2).forEach(function(c,i){var d=c.querySelector('.cdim'),nx=cards[i+1].getBoundingClientRect().top;d.style.opacity=(Math.min(1,Math.max(0,(vh-nx)/vh))*.4).toFixed(3)})}
