@@ -196,6 +196,7 @@ a{color:inherit;text-decoration:none}
 .sgrid{grid-template-columns:1fr;gap:30px}
 .pband,.whys{padding-block:48px}
 .js .c1,.js .c2{margin-bottom:50vh;margin-bottom:50svh}
+.field input,.field textarea{font-size:16px}
 .bgrid{grid-template-columns:1fr 1fr;gap:30px 22px}
 .cinner{flex-direction:column;align-items:flex-start}
 .cinner h2{font-size:38px}
@@ -416,7 +417,7 @@ header .btn.ghost{color:var(--heroink);border-color:rgba(242,235,224,.3)}
 #login{max-width:420px;margin:12vh auto;padding:0 20px}
 #login h1{font-size:38px;margin-bottom:8px}
 #login p{color:var(--mut);margin:0 0 20px}
-input,select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px}
+input,select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:16px}
 input:focus,select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 22%,transparent)}
 #login .btn{width:100%;margin-top:12px;padding:14px}
 .rem{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;color:var(--mut);cursor:pointer}
