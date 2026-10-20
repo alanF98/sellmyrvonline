@@ -2,7 +2,8 @@ const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F1EA">
 <meta name="color-scheme" content="light">
 <title>Sell your RV with peace of mind | Sell My RV Online</title>
 <meta name="description" content="Get a straightforward cash offer for your RV. Over 30 years of experience, free nationwide pickup, and all paperwork handled.">
