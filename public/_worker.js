@@ -150,7 +150,7 @@ a{color:inherit;text-decoration:none}
 .thanks{color:var(--acc);margin-bottom:16px}
 .thanks svg{width:36px;height:36px}
 .oform h3.tt{font-family:Inter,system-ui,sans-serif;font-size:20px;font-weight:600;line-height:1.4}
-.pband{background:var(--bg2);padding-block:70px}
+.pband{background:var(--bg2);padding-block:70px 190px}
 .hrow{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}
 .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:42px}
 .snum{display:flex;align-items:center;gap:14px;margin-bottom:23px;color:var(--acc);font-size:12px;font-weight:700}
@@ -194,6 +194,7 @@ a{color:inherit;text-decoration:none}
 .hrow{display:block}.hrow>a{margin-top:18px}
 .sgrid{grid-template-columns:1fr;gap:30px}
 .pband,.whys{padding-block:48px}
+.pband{padding-bottom:130px}
 .bgrid{grid-template-columns:1fr 1fr;gap:30px 22px}
 .cinner{flex-direction:column;align-items:flex-start}
 .cinner h2{font-size:38px}
