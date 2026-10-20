@@ -567,6 +567,9 @@ if(token){load(true).then(function(){showApp(true)}).catch(function(){})}
 
 const MAX_PHOTO = 8 * 1024 * 1024;
 const STATUSES = ['new', 'contacted', 'offer', 'closed'];
+// Fields an API client may edit (column name -> max length); same limits as the form.
+const EDITABLE = { year: 10, make: 60, model: 80, mileage: 20, comments: 2000, name: 100, phone: 30, email: 120, zip: 12 };
+const REQUIRED = ['year', 'make', 'model', 'name', 'phone', 'email', 'zip'];
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), { status, headers: { 'content-type': 'application/json' } });
@@ -668,9 +671,29 @@ async function api(request, env, ctx, url) {
   }
   if (lead && request.method === 'PATCH') {
     const body = await request.json().catch(() => ({}));
-    if (!STATUSES.includes(body.status)) return json({ error: 'Invalid status' }, 400);
-    const r = await env.DB.prepare('UPDATE leads SET status = ? WHERE id = ?').bind(body.status, lead[1]).run();
+    const set = [], args = [];
+    if ('status' in body) {
+      if (!STATUSES.includes(body.status)) return json({ error: 'Invalid status' }, 400);
+      set.push('status = ?'); args.push(body.status);
+    }
+    for (const [key, max] of Object.entries(EDITABLE)) {
+      if (!(key in body)) continue;
+      const v = clean(body[key], max);
+      if (REQUIRED.includes(key) && !v) return json({ error: `${key} cannot be empty` }, 400);
+      if (key === 'email' && !/^\S+@\S+\.\S+$/.test(v)) return json({ error: 'Invalid email' }, 400);
+      set.push(`${key} = ?`); args.push(v);
+    }
+    if (!set.length) return json({ error: 'Nothing to update' }, 400);
+    const r = await env.DB.prepare(`UPDATE leads SET ${set.join(', ')} WHERE id = ?`).bind(...args, lead[1]).run();
     return r.meta.changes ? json({ ok: true }) : json({ error: 'Not found' }, 404);
+  }
+  if (lead && request.method === 'DELETE') {
+    const r = await env.DB.prepare('SELECT photo_keys FROM leads WHERE id = ?').bind(lead[1]).first();
+    if (!r) return json({ error: 'Not found' }, 404);
+    const keys = JSON.parse(r.photo_keys || '[]');
+    if (keys.length) await env.PHOTOS.delete(keys);
+    await env.DB.prepare('DELETE FROM leads WHERE id = ?').bind(lead[1]).run();
+    return json({ ok: true });
   }
 
   const photo = pathname.match(/^\/api\/photos\/(leads\/[\w-]+\/photo-\d+)$/);
@@ -845,8 +868,22 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname.startsWith('/api/')) {
-      try { return await api(request, env, ctx, url); }
-      catch (e) { console.error(e); return json({ error: 'Server error' }, 500); }
+      // Browsers on other sites may call the API only from origins listed in ALLOWED_ORIGINS (comma-separated).
+      const origin = request.headers.get('origin');
+      const allowed = origin && (env.ALLOWED_ORIGINS || '').split(',').map((o) => o.trim()).filter(Boolean).includes(origin);
+      const withCors = (res) => {
+        if (!allowed) return res;
+        const h = new Headers(res.headers);
+        h.set('access-control-allow-origin', origin);
+        h.set('access-control-allow-methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+        h.set('access-control-allow-headers', 'authorization, content-type');
+        h.set('access-control-max-age', '86400');
+        h.append('vary', 'Origin');
+        return new Response(res.body, { status: res.status, headers: h });
+      };
+      if (request.method === 'OPTIONS') return withCors(new Response(null, { status: allowed ? 204 : 403 }));
+      try { return withCors(await api(request, env, ctx, url)); }
+      catch (e) { console.error(e); return withCors(json({ error: 'Server error' }, 500)); }
     }
     if (url.pathname === '/admin' || url.pathname === '/admin/') {
       return new Response(adminHtml, {
