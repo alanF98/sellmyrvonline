@@ -209,7 +209,7 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
-<div id="prog" aria-hidden="true"></div>
+<div id="prog" aria-hidden="true"></div><div id="lvh" aria-hidden="true" style="position:fixed;top:0;left:0;width:0;height:100vh;height:100lvh;visibility:hidden;pointer-events:none"></div>
 <nav id="nav" aria-label="Main navigation">
   <a class="nlogo" href="#top" aria-label="Sell My RV Online home"><img src="/logo-wide.png" alt="Sell My RV Online" width="213" height="26"></a>
   <ul class="nlinks">
@@ -362,7 +362,7 @@ nl.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur)
 var p=Math.min(1,Math.max(0,scrollY/(hero.offsetHeight*.9)));hero.style.setProperty('--p',(p*.55).toFixed(3));dimCards();
 var mx=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.transform='scaleX('+(mx>0?Math.min(1,Math.max(0,scrollY/mx)):0).toFixed(4)+')'}
 var cards=[].slice.call(document.querySelectorAll('.card'));
-function pins(){cards.slice(0,2).forEach(function(c){c.style.top=Math.min(0,document.documentElement.clientHeight-c.offsetHeight)+'px'})}
+function pins(){cards.slice(0,2).forEach(function(c){c.style.top=Math.min(0,(document.getElementById('lvh').offsetHeight||document.documentElement.clientHeight)-c.offsetHeight)+'px'})}
 function dimCards(){var vh=innerHeight;cards.slice(0,2).forEach(function(c,i){var d=c.querySelector('.cdim'),nx=cards[i+1].getBoundingClientRect().top;d.style.opacity=(Math.min(1,Math.max(0,(vh-nx)/vh))*.4).toFixed(3)})}
 pins();addEventListener('resize',pins);addEventListener('load',pins);
 if(window.ResizeObserver)cards.slice(0,2).forEach(function(c){new ResizeObserver(pins).observe(c)});
