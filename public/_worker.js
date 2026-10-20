@@ -85,9 +85,10 @@ a{color:inherit;text-decoration:none}
 .hero{background:var(--hero);height:calc(100svh - 50px);min-height:640px;max-height:860px;padding-top:98px;color:var(--heroink);display:flex;align-items:center;position:relative;overflow:hidden}
 .hero picture{position:absolute;inset:0}
 .himg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 59%}
+#prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:var(--heroacc);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
 .js .hero{position:sticky;top:0;z-index:1}
 .dim{position:absolute;inset:0;background:#0d0b09;opacity:var(--p,0);pointer-events:none}
-.card{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.card{position:relative;min-height:calc(100vh + 2px);min-height:calc(100lvh + 2px);display:flex;flex-direction:column;justify-content:center}
 .c1{z-index:1;background:var(--bg)}
 .c2{z-index:2;border-radius:24px 24px 0 0;box-shadow:0 -1px 0 rgba(28,25,21,.08),0 -24px 50px -26px rgba(0,0,0,.35)}
 .c3{z-index:3;background:var(--bg);border-radius:24px 24px 0 0;box-shadow:0 -1px 0 rgba(28,25,21,.08),0 -24px 50px -26px rgba(0,0,0,.35)}
@@ -208,6 +209,7 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
+<div id="prog" aria-hidden="true"></div>
 <nav id="nav" aria-label="Main navigation">
   <a class="nlogo" href="#top" aria-label="Sell My RV Online home"><img src="/logo-wide.png" alt="Sell My RV Online" width="213" height="26"></a>
   <ul class="nlinks">
@@ -357,7 +359,8 @@ function onScroll(){ticking=false;
 var line=innerHeight*.45,cur='top';['how','contact'].forEach(function(id){var e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=line)cur=id});
 if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='contact';
 nl.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur)});
-var p=Math.min(1,Math.max(0,scrollY/(hero.offsetHeight*.9)));hero.style.setProperty('--p',(p*.55).toFixed(3));dimCards()}
+var p=Math.min(1,Math.max(0,scrollY/(hero.offsetHeight*.9)));hero.style.setProperty('--p',(p*.55).toFixed(3));dimCards();
+var mx=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.transform='scaleX('+(mx>0?Math.min(1,Math.max(0,scrollY/mx)):0).toFixed(4)+')'}
 var cards=[].slice.call(document.querySelectorAll('.card'));
 function pins(){cards.slice(0,2).forEach(function(c){c.style.top=Math.min(0,document.documentElement.clientHeight-c.offsetHeight)+'px'})}
 function dimCards(){var vh=innerHeight;cards.slice(0,2).forEach(function(c,i){var d=c.querySelector('.cdim'),nx=cards[i+1].getBoundingClientRect().top;d.style.opacity=(Math.min(1,Math.max(0,(vh-nx)/vh))*.4).toFixed(3)})}
