@@ -450,6 +450,18 @@ input:focus,select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3
 .photo img{display:block;max-width:100%;max-height:420px;border-radius:12px;margin-top:12px}
 .empty{text-align:center;color:var(--mut);padding:60px 0}
 .more{text-align:center;padding:12px 0 48px}
+.apibox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 22px;margin-bottom:18px}
+.apibox summary{cursor:pointer;padding:16px 0;font:600 15px Inter,sans-serif;list-style:none}
+.apibox summary::-webkit-details-marker{display:none}
+.apibox summary::after{content:"+";float:right;color:var(--acc);font-size:20px;line-height:1}
+.apibox[open] summary::after{content:"\\2212"}
+.apibox .kv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:0 0 12px}
+.apibox .kv>span{flex:0 0 80px;font-size:13px;color:var(--mut)}
+.apibox code{flex:1 1 220px;min-width:0;padding:9px 12px;border-radius:10px;background:var(--bg2);font:500 13px ui-monospace,Menlo,monospace;overflow-wrap:anywhere}
+.apibox .btn{padding:8px 14px;font-size:13px}
+.apibox p,.apibox li{font-size:13px;color:var(--mut);margin:0 0 8px}
+.apibox ul{margin:0 0 16px;padding-left:18px}
+.apibox li code,.apibox p code{display:inline;padding:1px 6px;font-size:12px}
 .badge{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}
 .badge.new{background:var(--acc);border-color:var(--acc);color:#fff}
 </style>
@@ -468,6 +480,19 @@ input:focus,select:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3
 
 <div id="app"><div class="wrap">
   <div class="bar"><h2>Leads <em id="count"></em></h2><button class="btn ghost" id="rf">Refresh</button></div>
+  <details class="apibox" id="apibox"><summary>API access</summary>
+    <div class="kv"><span>Base URL</span><code id="apiurl"></code><button class="btn ghost" id="cpurl" type="button">Copy</button></div>
+    <div class="kv"><span>API key</span><code id="apikey"></code><button class="btn ghost" id="keyshow" type="button">Show</button><button class="btn ghost" id="cpkey" type="button">Copy</button></div>
+    <p>Send the key with every request as the header <code>Authorization: Bearer YOUR_KEY</code>. Anyone with this key can read, edit and delete every lead, so keep it on a server and never in public page code.</p>
+    <ul>
+      <li><code>GET /api/leads</code> list (<code>?status=new&amp;limit=50&amp;before=DATE</code>)</li>
+      <li><code>GET /api/leads/ID</code> one lead</li>
+      <li><code>PATCH /api/leads/ID</code> edit (JSON: status, year, make, model, mileage, comments, name, phone, email, zip)</li>
+      <li><code>DELETE /api/leads/ID</code> delete a lead and its photo</li>
+      <li><code>GET /api/photos/PHOTO_KEY</code> photo (needs the key)</li>
+    </ul>
+    <p>To call the API from another website's browser code, add that site's address to the <code>ALLOWED_ORIGINS</code> variable in Cloudflare Pages. To get each new lead pushed to another site, set <code>WEBHOOK_URL</code> (and optionally <code>WEBHOOK_SECRET</code>).</p>
+  </details>
   <div class="tabs" id="tabs"></div>
   <div style="height:16px"></div>
   <div id="list"></div>
@@ -482,7 +507,16 @@ try{token=localStorage.getItem('rvtoken')||sessionStorage.getItem('rvtoken')||''
 var $=function(id){return document.getElementById(id)};
 function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
 function api(path,opts){opts=opts||{};opts.headers=Object.assign({authorization:'Bearer '+token},opts.headers||{});return fetch(path,opts)}
-function showApp(on){$('login').style.display=on?'none':'block';$('app').style.display=on?'block':'none';$('out').style.display=on?'inline-flex':'none'}
+function masked(){return token?'\u2022'.repeat(Math.min(token.length,24)):''}
+var keyShown=false;
+function paintKey(){$('apikey').textContent=keyShown?token:masked();$('keyshow').textContent=keyShown?'Hide':'Show'}
+function copyText(t,btn){var done=function(){var o=btn.textContent;btn.textContent='Copied';setTimeout(function(){btn.textContent=o},1200)};
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(ta)}}
+$('apiurl').textContent=location.origin;
+$('cpurl').onclick=function(){copyText(location.origin,this)};
+$('keyshow').onclick=function(){keyShown=!keyShown;paintKey()};
+$('cpkey').onclick=function(){copyText(token,this)};
+function showApp(on){if(on){keyShown=false;paintKey()}$('login').style.display=on?'none':'block';$('app').style.display=on?'block':'none';$('out').style.display=on?'inline-flex':'none'}
 function signOut(){token='';try{sessionStorage.removeItem('rvtoken');localStorage.removeItem('rvtoken')}catch(e){}leads=[];showApp(false);$('tok').value=''}
 
 function buildTabs(){var t=$('tabs');t.innerHTML='';['all'].concat(STATUSES).forEach(function(s){var b=el('button','tab'+(s===filter?' on':''),LABEL[s]);b.onclick=function(){filter=s;buildTabs();load(true)};t.appendChild(b)})}
