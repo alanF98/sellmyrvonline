@@ -2,217 +2,270 @@ const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="theme-color" content="#f1ece6">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#F6F1EA">
-<meta name="color-scheme" content="light">
 <title>Sell your RV with peace of mind | Sell My RV Online</title>
-<meta name="description" content="Get a straightforward cash offer for your RV. Over 30 years of experience, free nationwide pickup, and all paperwork handled.">
-<meta property="og:title" content="Sell your RV with peace of mind | Sell My RV Online">
-<meta property="og:description" content="Get a straightforward cash offer for your RV. Over 30 years of experience, free nationwide pickup, and all paperwork handled.">
-<meta property="og:type" content="website">
+<meta name="description" content="Sell your luxury motorcoach or RV for a fair cash offer. Free nationwide pickup, we handle the paperwork, and a real person on the phone. Southwest Luxury Coach, Arizona.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#F6F1EA;--bg2:#EDE5D8;--ink:#1c1915;--mut:#6b6358;--acc:#9c6a34;--card:#fffdf9;--line:rgba(28,25,21,.14);--hero:#14110e;--accent:#f1dec4;--heroink:#f2ebe0;--herom:#a89d8e;--heroacc:#d09a5a;--heroline:rgba(242,235,224,.16);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*,*::before,*::after{box-sizing:border-box}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
-h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:400;line-height:1.05;margin:0;letter-spacing:-.02em}
-em{font-style:italic;color:var(--acc)}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:600}
-#nav{position:fixed;top:14px;left:50%;z-index:50;width:min(calc(100% - 2rem),1180px);transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.45rem .45rem .45rem 1rem;border-radius:999px;background:rgba(246,241,234,.88);-webkit-backdrop-filter:blur(22px) saturate(1.3);backdrop-filter:blur(22px) saturate(1.3);box-shadow:inset 0 0 0 1px rgba(255,255,255,.55),inset 0 1px 0 rgba(255,255,255,.8),0 10px 40px -18px rgba(40,22,6,.45);transition:background .4s}
-#nav.s{background:rgba(246,241,234,.95)}
-.nlogo{display:flex;align-items:center;flex-shrink:0}
-.nlogo img{display:block;height:26px;width:auto}
-.nlinks{display:flex;align-items:center;gap:.15rem;list-style:none;margin:0;padding:0}
-.nlinks a{display:block;white-space:nowrap;font-size:.8rem;font-weight:500;color:#6C5847;padding:.55rem .95rem;border-radius:999px;transition:color .3s,background .3s}
-.nlinks a:hover{color:#1B120A}
-.nlinks a.on{color:#1B120A;background:rgba(107,70,30,.09)}
-.nright{display:flex;align-items:center;gap:.9rem}
-.nphone{font-size:.8rem;font-weight:500;color:#6C5847;transition:color .2s}
-.nphone:hover{color:#1B120A}
-.nbtn{display:inline-flex;align-items:center;gap:.7rem;padding:.35rem .35rem .35rem 1.15rem;border-radius:999px;background:#95600F;color:#FFF8EC;font:500 .76rem Inter,system-ui,sans-serif;letter-spacing:.02em;white-space:nowrap;box-shadow:0 1px 2px rgba(80,48,12,.06),0 4px 14px -6px rgba(80,48,12,.1);transition:background .4s,box-shadow .4s}
-.nbtn:hover{background:#7C4F0B;box-shadow:0 2px 4px rgba(80,48,12,.04),0 14px 30px -14px rgba(80,48,12,.3)}
-.nbtn i{width:1.95rem;height:1.95rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,248,236,.16);transition:transform .5s cubic-bezier(.32,.72,0,1)}
-.nbtn:hover i{transform:translate(3px,-1px) scale(1.06)}
-.nbtn svg{width:14px;height:14px}
-.hb{display:none;position:relative;width:46px;height:46px;border-radius:50%;background:#1B120A;border:0;cursor:pointer;flex-shrink:0}
-.hb span{position:absolute;left:50%;top:50%;width:18px;height:1.5px;background:#F6F1EA;border-radius:2px;transition:transform .5s cubic-bezier(.32,.72,0,1)}
-.hb span:nth-child(1){transform:translate(-50%,-4px)}
-.hb span:nth-child(2){transform:translate(-50%,4px)}
-.hb.open span:nth-child(1){transform:translate(-50%,0) rotate(45deg)}
-.hb.open span:nth-child(2){transform:translate(-50%,0) rotate(-45deg)}
-#mm{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;gap:1.1rem;padding:7rem 1.5rem calc(2rem + env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior:contain;background:#F6F3EE;color:#1B120A;opacity:0;visibility:hidden;transition:opacity .5s cubic-bezier(.32,.72,0,1),visibility 0s linear .5s}
-#mm.open{opacity:1;visibility:visible;transition:opacity .5s cubic-bezier(.32,.72,0,1),visibility 0s}
-.mlinks{list-style:none;margin:0;padding:0}
-.mlinks a{display:flex;align-items:baseline;gap:1rem;padding:1.05rem 0;border-bottom:1px solid rgba(100,62,18,.14);font:400 2rem/1.1 Fraunces,Georgia,serif;letter-spacing:-.02em}
-.mlinks small{font:500 .7rem Inter,system-ui,sans-serif;color:#95600F;letter-spacing:.12em;min-width:1.6rem}
-.mdock{margin-top:auto;display:grid;gap:.6rem;padding:.95rem;border-radius:24px;background:linear-gradient(150deg,#2A1C10,#140D07);color:#F4EBDD;box-shadow:0 24px 40px -26px rgba(40,22,8,.85),inset 0 1px 0 rgba(255,236,205,.1)}
-.mdock a{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.9rem 1.1rem;border-radius:16px;font-weight:600;font-size:.95rem}
-.mdock .mcta{background:#D09A5A;color:#14110e}
-.mdock .mcall{background:rgba(244,235,221,.08);color:#F4EBDD}
-.mdock .mcall small{display:block;font-weight:400;font-size:.76rem;opacity:.7}
-.brands{padding:20px 0;background:var(--bg2);border-bottom:1px solid var(--line)}
-.brands .wrap{text-align:center;margin-bottom:12px;line-height:1}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.mq{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.brands .track{--ls:.72;display:flex;align-items:center;width:max-content;animation:m 64s linear infinite}
-.brands:hover .track{animation-play-state:paused}
-.mlogo{display:block;flex:none;margin:0 2rem;width:calc(var(--w) * var(--ls));height:calc(var(--w) * var(--ls) / var(--r));background:var(--ink);opacity:.82;-webkit-mask:var(--src) center / contain no-repeat;mask:var(--src) center / contain no-repeat}
-.mdot{flex:none;width:5px;height:5px;border-radius:50%;background:var(--acc)}
-@keyframes m{to{transform:translateX(-50%)}}
-.js .r{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
-.js .r.in{opacity:1;transform:none}
-.sw{width:min(1280px,100% - 96px);margin-inline:auto}
-.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;border:0;border-radius:999px;font:500 14px/1.25 Inter,system-ui,sans-serif;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
-.b svg{width:16px;height:16px;flex-shrink:0}
-.b:disabled{opacity:.6;cursor:wait}
-.b:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
-.gold{background:var(--heroacc);color:var(--hero);box-shadow:0 1px 2px rgba(0,0,0,.05);height:48px;padding:0 24px}
-.gold:hover{background:#c58f4d}
-.link{background:none;color:var(--heroink);text-decoration:underline;text-underline-offset:4px;height:36px;padding:0}
-.link:hover{color:var(--heroacc)}
-.dark{background:var(--ink);color:var(--bg);box-shadow:0 1px 3px rgba(0,0,0,.12);height:48px;padding:0 16px;flex:1}
-.dark:hover{background:color-mix(in srgb,var(--ink) 90%,transparent)}
-.tlink{background:none;color:var(--acc);height:36px;padding:0}
-.tlink:hover{text-decoration:underline;text-underline-offset:4px}
-.bicon{width:48px;height:48px;padding:0;background:transparent;border:1px solid var(--line);color:var(--ink);flex:none}
-.bicon:hover{background:var(--bg2)}
-.hero{background:var(--hero);height:calc(100svh - 50px);min-height:640px;max-height:860px;padding-top:98px;color:var(--heroink);display:flex;align-items:center;position:relative;overflow:hidden}
-.hero picture{position:absolute;inset:0}
-.himg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 59%}
-#prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:var(--heroacc);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
-.js .hero{position:sticky;top:0;z-index:1}
-.dim{position:absolute;inset:0;background:#0d0b09;opacity:var(--p,0);pointer-events:none}
-.card{position:relative;min-height:calc(100vh + 2px);min-height:calc(100lvh + 2px);display:flex;flex-direction:column;justify-content:center}
-.c1{z-index:1;background:var(--bg)}
-.c2{z-index:2;border-radius:24px 24px 0 0;box-shadow:0 -1px 0 rgba(28,25,21,.08),0 -24px 50px -26px rgba(0,0,0,.35)}
-.c3{z-index:3;background:var(--bg);border-radius:24px 24px 0 0;box-shadow:0 -1px 0 rgba(28,25,21,.08),0 -24px 50px -26px rgba(0,0,0,.35)}
-.js .c1,.js .c2{position:sticky;top:0}
-.cdim{position:absolute;inset:0;border-radius:inherit;background:#0d0b09;opacity:0;pointer-events:none}
-.sheet{position:relative;z-index:2;margin-top:-20px;background:var(--bg);border-radius:24px 24px 0 0;box-shadow:0 -1px 0 rgba(255,255,255,.14),0 -24px 50px -26px rgba(0,0,0,.5)}
-.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 48% at 50% 54%,rgba(20,17,14,.42),transparent 72%),linear-gradient(180deg,rgba(20,17,14,.5),rgba(20,17,14,.66) 45%,rgba(20,17,14,.52))}
-.hcontent{position:relative;z-index:1;text-align:center;padding-block:35px 65px}
-.pill{display:inline-flex;align-items:center;gap:9px;margin:0;padding:9px 16px;border:1px solid var(--heroacc);border-radius:30px;font-size:10px;font-weight:600;letter-spacing:0;text-transform:uppercase;line-height:1.5}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--heroacc)}
-.hero h1{max-width:900px;margin:26px auto 22px;font-size:82px;font-weight:400;line-height:1.02;letter-spacing:0}
-.hero h1 span{color:var(--heroacc);font-size:64px;font-style:italic}
-.hcopy{max-width:460px;margin:0 auto;color:rgba(242,235,224,.88);font-size:14px;line-height:1.85;text-shadow:0 1px 14px rgba(20,17,14,.55)}
-.hactions{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:26px}
-.hassure{display:flex;justify-content:center;align-items:center;gap:8px;margin:24px 0 0;color:rgba(242,235,224,.82);font-size:10px;text-shadow:0 1px 10px rgba(20,17,14,.6)}
-.hassure svg{width:14px;height:14px;flex-shrink:0}
-.hcap{position:absolute;z-index:2;bottom:30px;right:48px;display:flex;align-items:center;gap:7px;color:rgba(242,235,224,.78);font-size:10px;text-shadow:0 1px 10px rgba(20,17,14,.6)}
-.hcap svg{width:14px;height:14px}
-.tband{border-bottom:1px solid var(--line)}
-.tgrid{display:grid;grid-template-columns:repeat(4,1fr);padding-block:29px}
-.titem{display:flex;justify-content:center;align-items:center;gap:14px;border-right:1px solid var(--line)}
-.titem:first-child{justify-content:flex-start}
-.titem:last-child{border:0}
-.titem svg{width:25px;height:25px;color:var(--acc);flex-shrink:0}
-.titem strong{display:block;font-size:13px;font-weight:700}
-.titem span{display:block;margin-top:4px;color:var(--mut);font-size:11px}
-.offer{display:grid;grid-template-columns:.85fr 1.15fr;align-items:start;gap:90px;padding-block:75px 85px}
-.label{margin:0 0 19px;color:var(--acc);font-size:10px;font-weight:700;letter-spacing:0;text-transform:uppercase}
-.stitle{margin:0;font-size:48px;font-weight:500;line-height:1.1;letter-spacing:0}
-.scopy{max-width:440px;margin:19px 0 0;color:var(--mut);font-size:14px;line-height:1.85}
-.perks{display:grid;gap:15px;margin-top:28px;font-size:13px}
-.perks span{display:flex;align-items:center;gap:10px}
-.perks svg{width:17px;height:17px;color:var(--acc);flex-shrink:0}
-.ocall{display:flex;align-items:center;gap:13px;margin-top:33px;padding-top:23px;border-top:1px solid var(--line);color:var(--mut);font-size:12px}
-.ocall svg{width:24px;height:24px;color:var(--acc);flex-shrink:0}
-.ocall a{display:block;margin-top:4px;color:var(--ink);font-size:18px;font-weight:700}
-.oform{background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 36px rgba(20,17,14,.06);padding:28px 30px}
-.fhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:25px}
-.fhead h3{font-size:25px;font-weight:400;letter-spacing:0;line-height:1.2}
-.scount{color:var(--mut);font-size:10px;white-space:nowrap}
-.prog{display:flex;gap:4px;margin-top:7px}
-.prog i{width:27px;height:3px;background:var(--line)}
-.prog i.active{background:var(--acc)}
-.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:17px 16px}
-.field{display:block;margin:0;font-size:11px;font-weight:700;color:var(--ink)}
-.field input,.field textarea{display:block;width:100%;min-height:43px;margin-top:7px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:400 12px Inter,system-ui,sans-serif;outline:none}
-.field input:focus,.field textarea:focus{border-color:var(--acc);box-shadow:0 0 0 2px var(--accent)}
-.field textarea{resize:vertical}
-.fwide{grid-column:1/-1}
-.opt{color:var(--mut);font-weight:400}
-.req{color:var(--acc)}
-.upl{display:flex;align-items:center;gap:8px;padding-block:17px;color:var(--acc);font-size:11px;cursor:pointer}
-.upl input{position:absolute;width:1px;height:1px;opacity:0}
-.upl svg{width:15px;height:15px;flex-shrink:0}
-.ferr{margin:0 0 16px;color:#c0392b;font-size:12px}
-.frow{display:flex;gap:12px}
-.fpriv{display:flex;justify-content:center;align-items:center;gap:6px;margin:13px 0 0;color:var(--mut);font-size:9px}
-.fpriv svg{width:12px;height:12px}
-.hp{position:absolute;left:-9999px}
-.thanks{color:var(--acc);margin-bottom:16px}
-.thanks svg{width:36px;height:36px}
-.oform h3.tt{font-family:Inter,system-ui,sans-serif;font-size:20px;font-weight:600;line-height:1.4}
-.pband{background:var(--bg2);padding-block:70px}
-.hrow{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}
-.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:42px}
-.snum{display:flex;align-items:center;gap:14px;margin-bottom:23px;color:var(--acc);font-size:12px;font-weight:700}
-.snum::after{content:"";flex:1;height:1px;background:var(--line)}
-.pstep h3{font-size:24px;font-weight:400;letter-spacing:0;line-height:1.2}
-.pstep p{margin:12px 0 0;color:var(--mut);font-size:13px;line-height:1.8}
-.whys{padding-block:75px}
-.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:35px;margin-top:35px}
-.ben svg{width:25px;height:25px;margin-bottom:18px;color:var(--acc)}
-.ben h3{font-size:21px;font-weight:400;letter-spacing:0;line-height:1.2}
-.ben p{margin:10px 0 0;color:var(--mut);font-size:12px;line-height:1.85}
-.cband{background:var(--hero);color:var(--heroink);padding-block:43px}
-.cinner{display:flex;justify-content:space-between;align-items:center;gap:25px}
-.cinner h2{margin:0;font-size:40px;font-weight:500;line-height:1.1;letter-spacing:0}
-.cinner p{margin:8px 0 0;opacity:.8;font-size:12px}
-.sfoot{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:31px;color:var(--mut);font-size:10px}
-.sfoot p,.sfoot span{margin:0}
-.flinks{display:flex;gap:22px}
-.flinks a:hover{color:var(--ink)}
-@media (min-width:1600px){.hero{min-height:700px}}
-@media (max-width:1050px){.sw{width:calc(100% - 56px)}.hero h1{font-size:74px}.hero h1 span{font-size:56px}.offer{gap:40px}}
-@media (max-width:700px){
-.sw{width:calc(100% - 40px)}
-.hero{height:calc(100svh - 150px);min-height:560px;max-height:780px;padding-top:86px}
-.himg{object-position:72% center}
-.hcontent{padding-block:35px 55px}
-.pill{padding:8px 12px;font-size:8px}
-.hero h1{margin-top:24px;font-size:48px}
-.hero h1 span{font-size:38px}
-.hcopy{max-width:340px;font-size:13px}
-.hactions{flex-direction:column;gap:16px;margin-top:22px}
-.hassure{font-size:9px;line-height:1.5}
-.hcap{bottom:30px;right:20px;font-size:8px}
-.tgrid{grid-template-columns:1fr 1fr;gap:25px 12px;padding-block:24px}
-.titem,.titem:first-child{border:0;justify-content:flex-start;gap:10px}
-.titem strong{font-size:11px}.titem span{font-size:9px}.titem svg{width:21px;height:21px}
-.offer{grid-template-columns:1fr;gap:32px;padding-block:45px}
-.stitle{font-size:41px}
-.oform{padding:23px 20px}
-.fgrid{gap:16px 12px}
-.hrow{display:block}.hrow>a{margin-top:18px}
-.sgrid{grid-template-columns:1fr;gap:30px}
-.pband,.whys{padding-block:48px}
-.js .c1,.js .c2{margin-bottom:50vh;margin-bottom:50svh}
-.field input,.field textarea{font-size:16px}
-.typing .c2,.typing .c3{visibility:hidden}
-.bgrid{grid-template-columns:1fr 1fr;gap:30px 22px}
-.cinner{flex-direction:column;align-items:flex-start}
-.cinner h2{font-size:38px}
-.sfoot{flex-direction:column;align-items:flex-start;gap:18px;line-height:1.7}
+/* Hallmark · shape: Catalogue (hero print, claims, brands, form card, steps, reasons, close) · genre: editorial · theme: Atelier (deal 1/3, seed cash-offers-luxury-motorcoaches-e980·475ef084·2026-11-01·r0) · redesign: full · job: book
+ * hero: Stage · nav: edge-aligned bar · footer: colophon line · imagery: the client's own photograph, no library stand-ins (none fit) · signature: the coach as a matted print with its wall label, and the offer form as a letterpress card on cotton stock
+ * axes: light/roman-serif/cool · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, the library had no motorcoach photographs so the page carries one picture; the form card and the numbered steps carry the rest instead of invented stand-ins */
+/* Hallmark · dismissed 19 · the copyright line is the owner's own legal notice for Southwest Luxury Coach, kept verbatim */
+/* Hallmark · dismissed 58 · the offer form and the reasons list carry the owner's own copy and every field label the lead form needs */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --color-paper: oklch(94.5% 0.010 76); --color-paper-2: oklch(91.8% 0.013 74); --color-paper-3: oklch(88% 0.015 72);
+  --color-ink: oklch(19% 0.024 52); --color-ink-2: oklch(31% 0.018 54); --color-muted: oklch(47% 0.014 60);
+  --color-rule: oklch(81% 0.011 70);
+  --color-accent: oklch(41% 0.075 248); --color-accent-ink: oklch(96% 0.008 76); --color-focus: oklch(50% 0.095 248);
+  --color-card: oklch(97.6% 0.007 82); --color-card-edge: oklch(86% 0.012 72); --color-pencil: oklch(52% 0.010 62);
+  --card-lit: oklch(98.4% 0.006 84); --card-shade: oklch(96.4% 0.008 78); --lit: oklch(99.6% 0.004 85 / 0.9);
+  --font-display: "Sentient", Georgia, serif; --font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+  --radius-card: 0; --radius-pill: 3px; --rule-hair: 1px; --rule-head: 1px;
+  --shadow-card: 0 0 0 1px oklch(30% 0.03 55 / 0.05), 0.5px 1px 1px oklch(30% 0.03 55 / 0.08), 3px 8px 14px -6px oklch(30% 0.03 55 / 0.14), 14px 36px 64px -28px oklch(30% 0.03 55 / 0.3);
+  --tracking-display: -0.018em; --tracking-statement: -0.022em; --display-weight: 300; --statement-weight: 300; --serif-small: 400;
+  --nav-h: 72px;
+  --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
-@media (prefers-reduced-motion:reduce){.js .hero,.js .c1,.js .c2{margin-bottom:0}.js .hero{position:relative}.js .c1,.js .c2{position:relative}.card{min-height:0;display:block}.cdim{display:none}.dim{display:none}*,*::before,*::after{animation:none!important;transition:none!important}.js .r{opacity:1;transform:none}.brands .track{width:auto;flex-wrap:wrap;justify-content:center}.brands .track>*:nth-child(n+13){display:none}.mq{-webkit-mask-image:none;mask-image:none}}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; scrollbar-color: var(--color-muted) var(--color-paper); scroll-padding-top: var(--nav-h); }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink-2); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.6; -webkit-font-smoothing: antialiased; caret-color: var(--color-accent); padding-top: var(--nav-h); }
+body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: var(--grain) 0 0 / 180px; opacity: 0.1; mix-blend-mode: multiply; }
+main, footer { position: relative; z-index: var(--z-base); }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); color: var(--color-ink); }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.16em; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-synthesis: none; letter-spacing: var(--tracking-display); line-height: 1.05; color: var(--color-ink); overflow-wrap: break-word; min-width: 0; text-wrap: balance; }
+h1 { max-width: 20ch; font-size: var(--text-display); }
+h2 { max-width: 30ch; font-size: var(--text-section); }
+h3 { max-width: 40ch; font-size: var(--text-title); line-height: 1.2; font-weight: var(--serif-small); }
+.lead { font-size: var(--text-lead); line-height: 1.45; max-width: 52ch; }
+p { margin: 0; text-wrap: pretty; }
+p:not([class]) { max-width: 65ch; }
+img { max-width: 100%; height: auto; display: block; }
+svg { display: block; }
+[hidden] { display: none !important; }
+button, input, select, textarea { font: inherit; }
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.grid12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); }
 
-@media (max-width:1060px){.nphone{display:none}}
-@media (max-width:980px){#nav{padding-left:.8rem}.nlinks,.nphone,.nbtn{display:none}.hb{display:block}.nlogo img{height:23px}}
-@media (min-width:981px){#mm{display:none}}
+/* controls */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding-inline: var(--space-lg); border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-pill); background: transparent; color: var(--color-ink); font-size: var(--text-md); line-height: 1; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn:hover { background: var(--color-ink); color: var(--color-paper); }
+.btn:active { transform: translateY(1px); background: var(--color-ink-2); color: var(--color-paper); }
+.btn:disabled { background: var(--color-paper-3); color: var(--color-muted); border-color: var(--color-rule); cursor: not-allowed; }
+.btn.ghost { min-width: 52px; padding-inline: var(--space-md); }
+.link { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 0.25em; transition: color var(--dur-short) var(--ease-out); }
+.link:hover { color: var(--color-accent); }
+.link:active { color: var(--color-ink-2); }
+
+/* nav */
+#nav { position: fixed; top: 0; left: 0; right: 0; z-index: var(--z-sticky-nav); height: var(--nav-h); background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+#nav .navin { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); height: 100%; }
+.nlogo { display: flex; align-items: center; flex: none; }
+.nlogo img { width: auto; height: 28px; }
+.nlinks { display: flex; align-items: center; gap: var(--space-lg); list-style: none; margin: 0; padding: 0; }
+.nlinks a { display: block; padding-block: var(--space-xs); font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; border-bottom: var(--rule-hair) solid transparent; transition: color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
+.nlinks a:hover { color: var(--color-ink); }
+.nlinks a:active { color: var(--color-accent); }
+.nlinks a.on { color: var(--color-ink); border-bottom-color: var(--color-accent); }
+.nright { display: flex; align-items: center; gap: var(--space-lg); }
+.nphone { font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; }
+.nphone:hover { color: var(--color-ink); text-decoration: underline; }
+.nbtn { min-height: 44px; white-space: nowrap; font-size: var(--text-sm); }
+.hb { display: none; position: relative; width: 44px; height: 44px; padding: 0; border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-pill); background: transparent; cursor: pointer; flex: none; }
+.hb:hover { background: var(--color-paper-2); }
+.hb span { position: absolute; left: 50%; top: 50%; width: 18px; height: 1px; background: var(--color-ink); transition: transform var(--dur-short) var(--ease-out); }
+.hb span:nth-child(1) { transform: translate(-50%, -3px); }
+.hb span:nth-child(2) { transform: translate(-50%, 3px); }
+.hb.open span:nth-child(1) { transform: translate(-50%, 0) rotate(45deg); }
+.hb.open span:nth-child(2) { transform: translate(-50%, 0) rotate(-45deg); }
+#mm { position: fixed; inset: var(--nav-h) 0 0 0; z-index: var(--z-sticky); display: flex; flex-direction: column; gap: var(--space-lg); padding: var(--space-lg) var(--space-lg) var(--space-xl); overflow-y: auto; overscroll-behavior: contain; background: var(--color-paper); opacity: 0; visibility: hidden; transition: opacity var(--dur-short) var(--ease-out), visibility 0s linear var(--dur-short); }
+#mm.open { opacity: 1; visibility: visible; transition: opacity var(--dur-short) var(--ease-out), visibility 0s; }
+.mlinks { list-style: none; margin: 0; padding: 0; border-top: var(--rule-head) solid var(--color-ink); }
+.mlinks li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+.mlinks a { display: block; padding-block: var(--space-md); font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-2xl); line-height: 1.1; color: var(--color-ink); text-decoration: none; }
+.mdock { display: grid; gap: var(--space-sm); margin-top: auto; }
+.mdock .btn { width: 100%; }
+.mdock .mcta { background: var(--color-ink); color: var(--color-paper); }
+.mdock .mcta:active { background: var(--color-ink-2); }
+
+/* hero: Stage */
+.hero { padding-block: var(--space-xl); }
+.hero-grid { min-height: min(740px, calc(100svh - var(--nav-h) - var(--space-2xl) - var(--space-xl))); align-items: center; row-gap: var(--space-xl); }
+.hero-copy { grid-column: 1 / span 5; display: grid; gap: var(--space-xl); justify-items: start; align-self: center; }
+.hero-copy h1 { margin-bottom: var(--space-xs); }
+.hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-top: var(--space-xl); }
+.assure { margin-top: var(--space-xl); color: var(--color-muted); font-size: var(--text-sm); }
+.print { grid-column: 6 / span 7; margin: 0; position: relative; }
+.mat { background: var(--fibre) 0 0 / 220px, linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade)); box-shadow: var(--shadow-card), inset 1px 1px 0 var(--lit); padding: var(--space-md); border-radius: 2px; }
+.mat img { width: 100%; aspect-ratio: 6 / 5; object-fit: cover; object-position: 50% 60%; outline: 1px solid color-mix(in oklab, var(--color-ink) 10%, transparent); outline-offset: -1px; filter: sepia(0.28) saturate(0.89) contrast(0.94); }
+.print figcaption { display: flex; justify-content: space-between; gap: var(--space-md); margin-top: var(--space-sm); padding-inline: var(--space-3xs); color: var(--color-pencil); font-size: var(--text-sm); }
+
+/* claims */
+.claims { border-top: var(--rule-head) solid var(--color-ink); }
+.claims ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.claims li { padding: var(--space-xl) var(--space-lg) var(--space-xl) 0; display: grid; gap: var(--space-xs); align-content: start; }
+.claims li + li { padding-left: var(--space-lg); border-left: var(--rule-hair) solid var(--color-rule); }
+.claims p { color: var(--color-muted); font-size: var(--text-sm); }
+.claims .ct { font-family: var(--font-display); font-weight: var(--serif-small); font-size: var(--text-title); line-height: 1.2; color: var(--color-ink); }
+
+/* sections */
+.sec { padding-block: var(--section-gap-s); }
+#how { padding-bottom: calc(var(--section-gap-l) + var(--space-3xl)); }
+#why { padding-top: calc(var(--section-gap-l) + var(--space-2xl)); }
+.sec.band { background: var(--color-paper-2); }
+.sec.band3 { background: var(--color-paper-3); }
+#how .head, #why .head { margin-bottom: var(--space-3xl); }
+.head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: end; row-gap: var(--space-md); margin-bottom: var(--space-2xl); }
+.head h2 { grid-column: 1 / span 7; }
+.head .lead, .head .link { grid-column: 8 / span 5; justify-self: start; }
+.head .link { font-size: var(--text-lg); padding-bottom: var(--space-xs); }
+
+/* brands */
+.brands-body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: center; }
+.brands-body h2 { grid-column: 1 / span 4; }
+.logos { grid-column: 6 / span 7; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: var(--rule-head) solid var(--color-ink); }
+.logos li { display: grid; place-items: center; height: 112px; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.logos li:not(:nth-child(3n+1)) { border-left: var(--rule-hair) solid var(--color-rule); }
+.mlogo { display: block; width: calc(var(--w) * 0.75); max-width: 80%; height: auto; aspect-ratio: var(--r); background: var(--color-ink); opacity: 0.82; -webkit-mask: var(--src) center / contain no-repeat; mask: var(--src) center / contain no-repeat; }
+
+/* offer */
+.offer-grid { align-items: end; row-gap: var(--space-3xl); }
+.offer-copy { grid-column: 1 / span 7; display: grid; gap: var(--space-lg); justify-items: start; }
+.perks { grid-column: 9 / span 4; list-style: none; margin: 0; padding: 0; border-top: var(--rule-head) solid var(--color-ink); }
+.perks li { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.ocall { grid-column: 3 / span 8; color: var(--color-muted); }
+.ocall a { color: var(--color-ink); }
+.stock { position: relative; grid-column: 3 / span 8; padding: var(--space-2xl); border-radius: 2px; background: var(--fibre) 0 0 / 220px, linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade)); box-shadow: var(--shadow-card), inset 1px 1px 0 var(--lit); text-shadow: 0 1px 0 var(--lit); }
+.stock::before { content: ""; position: absolute; inset: 0.875rem; border: var(--rule-hair) solid var(--color-card-edge); pointer-events: none; }
+.stock > * { position: relative; }
+.fhead { display: flex; justify-content: space-between; align-items: flex-end; gap: var(--space-md); margin-bottom: var(--space-lg); }
+.fhead h3 { font-size: var(--text-2xl); }
+.fstep { display: grid; gap: var(--space-xs); justify-items: end; color: var(--color-muted); font-size: var(--text-sm); white-space: nowrap; }
+.prog { display: flex; gap: var(--space-2xs); }
+.prog i { display: block; width: 28px; height: 2px; background: var(--color-rule); }
+.prog i.active { background: var(--color-ink); }
+.fgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg) var(--space-lg); }
+.field { display: block; color: var(--color-muted); font-size: var(--text-sm); }
+.field.fwide { grid-column: 1 / -1; }
+.field input, .field textarea { display: block; width: 100%; min-height: 48px; margin-top: var(--space-2xs); padding: var(--space-sm) var(--space-2xs); border: 0; border-bottom: var(--rule-hair) solid var(--color-muted); border-radius: 0; background: transparent; color: var(--color-ink); font-size: 16px; line-height: 1.4; }
+.field textarea { resize: vertical; min-height: 72px; }
+.field input::placeholder, .field textarea::placeholder { color: var(--color-pencil); opacity: 1; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.field input:hover, .field textarea:hover { border-bottom-color: var(--color-ink); }
+.field input:disabled, .field textarea:disabled { color: var(--color-muted); background: var(--color-paper-2); cursor: not-allowed; }
+.field input:invalid:not(:placeholder-shown) { border-bottom-color: var(--color-error); }
+.req, .opt { color: var(--color-pencil); }
+.upl { position: relative; display: flex; align-items: center; gap: var(--space-sm); margin-top: var(--space-lg); min-height: 52px; padding-inline: var(--space-md); border: var(--rule-hair) solid var(--color-card-edge); border-radius: var(--radius-pill); color: var(--color-ink-2); font-size: var(--text-sm); cursor: pointer; transition: border-color var(--dur-short) var(--ease-out); }
+.upl:hover { border-color: var(--color-ink); }
+.upl:active { background: var(--color-paper-2); }
+.upl:focus-within { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.upl input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.ferr { margin-top: var(--space-md); color: var(--color-error); font-size: var(--text-sm); }
+.frow { display: flex; gap: var(--space-sm); margin-top: var(--space-md); }
+.frow .btn { white-space: nowrap; }
+.frow .btn:not(.ghost) { flex: 1; background: var(--color-ink); color: var(--color-paper); }
+.frow .btn:not(.ghost):hover { background: var(--color-ink-2); }
+.frow .btn:not(.ghost):disabled { background: var(--color-paper-3); color: var(--color-muted); }
+.fpriv { margin-top: var(--space-lg); color: var(--color-muted); font-size: var(--text-sm); }
+.thanks { display: grid; gap: var(--space-md); }
+.thanks h3 { font-size: var(--text-2xl); }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap-columns); border-top: var(--rule-head) solid var(--color-ink); }
+.steps li { counter-increment: step; padding-top: var(--space-lg); display: grid; gap: var(--space-sm); align-content: start; }
+.steps li::before { content: counter(step); font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-display-s); line-height: 1; color: var(--color-ink); }
+.steps p { color: var(--color-ink-2); }
+
+/* reasons */
+.rows { list-style: none; margin: 0; padding: 0; border-top: var(--rule-head) solid var(--color-ink); }
+.rows li { align-items: center; min-height: 240px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); padding-block: var(--space-3xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.rows h3 { grid-column: 1 / span 5; font-size: var(--text-3xl); line-height: 1.1; }
+.rows p { grid-column: 6 / span 6; align-self: center; font-size: var(--text-lead); line-height: 1.5; }
+
+/* close */
+.close-inner { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: center; row-gap: var(--space-xl); }
+.close-inner > div { grid-column: 1 / span 7; display: grid; gap: var(--space-md); }
+.close-inner h2 { font-size: var(--text-display-s); }
+.close-inner .btn { grid-column: 9 / span 4; justify-self: end; }
+
+/* footer */
+.sfoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md) var(--space-lg); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-muted); font-size: var(--text-sm); }
+.flinks { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); }
+.flinks a { color: var(--color-ink-2); }
+
+/* reveal: visible by default, hidden only when scripting runs */
+.js .r { opacity: 0; transform: translateY(var(--space-md)); transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out); }
+.js .r.in { opacity: 1; transform: none; }
+
+@media (max-width: 80rem) { .nphone { display: none; } }
+@media (max-width: 60rem) {
+  .nlinks, .nphone, .nbtn { display: none; }
+  .hb { display: block; }
+  .hero { padding-block: var(--space-xl); }
+  .hero-grid { min-height: 0; }
+  .hero-copy, .print { grid-column: 1 / -1; }
+  .claims ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .claims li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .claims li:nth-child(n+3) { border-top: var(--rule-hair) solid var(--color-rule); }
+  .head h2, .head .lead, .head .link { grid-column: 1 / -1; }
+  .brands-body h2, .logos { grid-column: 1 / -1; }
+  .brands-body { row-gap: var(--space-xl); }
+  .offer-copy, .stock, .perks, .ocall { grid-column: 1 / -1; }
+  .stock { padding: var(--space-xl); }
+  .steps { grid-template-columns: 1fr; row-gap: var(--space-xl); border-top: 0; }
+  .steps li { border-top: var(--rule-head) solid var(--color-ink); }
+  .rows h3, .rows p { grid-column: 1 / -1; }
+  .rows h3 { margin-bottom: var(--space-sm); }
+  .rows li { padding-block: var(--space-xl); }
+  .close-inner > div, .close-inner .btn { grid-column: 1 / -1; }
+  .close-inner .btn { justify-self: stretch; }
+}
+@media (max-width: 40rem) {
+  .nlogo img { height: 24px; }
+  .stock { padding: var(--space-lg) var(--space-md); }
+  .fgrid { grid-template-columns: 1fr; }
+  .fhead { flex-direction: column; align-items: flex-start; }
+  .fstep { justify-items: start; }
+  .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .logos li:not(:nth-child(3n+1)) { border-left: 0; }
+  .logos li:nth-child(even) { border-left: var(--rule-hair) solid var(--color-rule); }
+  .logos li { height: 96px; }
+  .claims ul { grid-template-columns: 1fr; }
+  .claims li, .claims li + li { padding: var(--space-lg) 0; border-left: 0; }
+  .claims li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .js .r { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
-<div id="prog" aria-hidden="true"></div><div id="lvh" aria-hidden="true" style="position:fixed;top:0;left:0;width:0;height:100vh;height:100lvh;visibility:hidden;pointer-events:none"></div>
-<nav id="nav" aria-label="Main navigation">
+<nav id="nav" aria-label="Main navigation"><div class="container navin">
   <a class="nlogo" href="#top" aria-label="Sell My RV Online home"><img src="/logo-wide.png" alt="Sell My RV Online" width="213" height="26"></a>
   <ul class="nlinks">
     <li><a href="#top">Sell Your RV</a></li>
@@ -222,63 +275,70 @@ a{color:inherit;text-decoration:none}
   </ul>
   <div class="nright">
     <a class="nphone" href="tel:8008631848" aria-label="Call us at 800-863-1848">800-863-1848</a>
-    <a class="nbtn" href="#offer">Get your cash offer<i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></i></a>
+    <a class="btn nbtn" href="#offer">Get your cash offer</a>
     <button class="hb" id="hb" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mm"><span></span><span></span></button>
   </div>
-</nav>
+</div></nav>
 <div id="mm" role="dialog" aria-label="Mobile navigation" aria-modal="true" aria-hidden="true">
   <ul class="mlinks">
-    <li><a href="#top"><small>01</small>Sell Your RV</a></li>
-    <li><a href="#how"><small>02</small>How It Works</a></li>
-    <li><a href="/faq/"><small>03</small>FAQs</a></li>
-    <li><a href="#contact"><small>04</small>Contact Us</a></li>
+    <li><a href="#top">Sell Your RV</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="/faq/">FAQs</a></li>
+    <li><a href="#contact">Contact Us</a></li>
   </ul>
   <div class="mdock">
-    <a class="mcta" href="#offer">Get your cash offer <span aria-hidden="true">&rarr;</span></a>
-    <a class="mcall" href="tel:8008631848"><span>Call us<small>800-863-1848</small></span><span aria-hidden="true">&rarr;</span></a>
+    <a class="btn mcta" href="#offer">Get your cash offer</a>
+    <a class="btn mcall" href="tel:8008631848">Call us 800-863-1848</a>
   </div>
 </div>
 <!--/nav-->
 <main>
-<header class="hero" id="top">
-  <picture><source srcset="/hero-sunset.webp" type="image/webp"><img class="himg" src="/hero-sunset.jpg" width="1083" height="744" alt="Luxury motorcoach in the Arizona desert at sunset" fetchpriority="high" decoding="async"></picture>
-  <div class="dim" aria-hidden="true"></div>
-  <div class="sw hcontent r">
-    <p class="pill"><span class="dot"></span>GOOD PEOPLE. FAIR OFFERS. NEW BEGINNINGS.</p>
-    <h1>Sell your RV.<br><span>Keep your peace of mind.</span></h1>
-    <p class="hcopy">Your coach has taken you places. Now let it take you to your next chapter—with a fair cash offer and none of the hassle.</p>
-    <div class="hactions"><a class="b gold" href="#offer">Get my cash offer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a><a class="b link" href="#how">See how it works <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-    <p class="hassure"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>No obligation. No hidden fees. Just a real conversation.</p>
+<header class="hero" id="top"><div class="container grid12 hero-grid">
+  <div class="hero-copy r">
+    <h1>Sell your RV with peace of mind.</h1>
+    <p class="lead">A fair cash offer and none of the hassle.</p>
+    <div class="actions"><a class="btn" href="#offer">Get my cash offer</a><a class="link" href="#how">See how it works</a></div>
+    <p class="assure">No obligation. No hidden fees. Just a real conversation.</p>
   </div>
-  <span class="hcap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>ARIZONA ROOTS. NATIONWIDE REACH.</span>
-</header>
+  <figure class="print r">
+    <div class="mat"><picture><source srcset="/hero-sunset.webp" type="image/webp"><img src="/hero-sunset.jpg" width="1083" height="744" alt="Luxury motorcoach in the Arizona desert at sunset" fetchpriority="high" decoding="async"></picture></div>
+    <figcaption><span>Arizona roots. Nationwide reach.</span></figcaption>
+  </figure>
+</div></header>
 
-<div class="sheet">
-<section class="tband" aria-label="Why owners choose us"><div class="sw tgrid">
-  <div class="titem"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><div><strong>Free nationwide pickup</strong><span>Wherever you are, we come to you</span></div></div>
-  <div class="titem"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m14 20 2 2 4-4"/></svg><div><strong>We handle the paperwork</strong><span>Including your bank payoff</span></div></div>
-  <div class="titem"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><div><strong>Real people. Always.</strong><span>No call centers. No runaround.</span></div></div>
-  <div class="titem"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg><div><strong>30+ years of experience</strong><span>A name you can feel good about</span></div></div>
+<section class="claims" aria-label="Why owners choose us"><div class="container"><ul>
+  <li><p class="ct">Free nationwide pickup</p><p>Wherever you are, we come to you</p></li>
+  <li><p class="ct">We handle the paperwork</p><p>Including your bank payoff</p></li>
+  <li><p class="ct">Real people. Always.</p><p>Never a call center or a runaround</p></li>
+  <li><p class="ct">30+ years of experience</p><p>A name you can feel good about</p></li>
+</ul></div></section>
+
+<section class="sec" aria-label="Brands we know best"><div class="container brands-body">
+  <p class="visually-hidden">Brands we know best: Newell, Prevost, Newmar, Marathon Coach, Renegade RV, ShowHauler.</p>
+  <h2 class="r" aria-hidden="true">Brands we know best</h2>
+  <ul class="logos r" aria-hidden="true">
+    <li><span class="mlogo" style="--src:url(/brands/newell.png);--w:188px;--r:10.24"></span></li>
+    <li><span class="mlogo" style="--src:url(/brands/prevost.svg);--w:168px;--r:11.76"></span></li>
+    <li><span class="mlogo" style="--src:url(/brands/newmar.svg);--w:108px;--r:2.5"></span></li>
+    <li><span class="mlogo" style="--src:url(/brands/marathon.svg);--w:98px;--r:2.04"></span></li>
+    <li><span class="mlogo" style="--src:url(/brands/renegade.png);--w:150px;--r:4.01"></span></li>
+    <li><span class="mlogo" style="--src:url(/brands/showhauler.png);--w:96px;--r:2.09"></span></li>
+  </ul>
 </div></section>
 
-<section class="brands" aria-label="Brands we know best">
-  <p class="sr">Brands we know best: Newell, Prevost, Newmar, Marathon Coach, Renegade RV, ShowHauler.</p>
-  <div class="wrap"><span class="eyebrow">Brands we know best</span></div>
-  <div class="mq" aria-hidden="true"><div class="track"><span class="mlogo" style="--src:url(/brands/newell.png);--w:188px;--r:10.24"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/prevost.svg);--w:168px;--r:11.76"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newmar.svg);--w:108px;--r:2.5"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/marathon.svg);--w:98px;--r:2.04"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/renegade.png);--w:150px;--r:4.01"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/showhauler.png);--w:96px;--r:2.09"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newell.png);--w:188px;--r:10.24"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/prevost.svg);--w:168px;--r:11.76"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newmar.svg);--w:108px;--r:2.5"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/marathon.svg);--w:98px;--r:2.04"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/renegade.png);--w:150px;--r:4.01"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/showhauler.png);--w:96px;--r:2.09"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newell.png);--w:188px;--r:10.24"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/prevost.svg);--w:168px;--r:11.76"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newmar.svg);--w:108px;--r:2.5"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/marathon.svg);--w:98px;--r:2.04"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/renegade.png);--w:150px;--r:4.01"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/showhauler.png);--w:96px;--r:2.09"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newell.png);--w:188px;--r:10.24"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/prevost.svg);--w:168px;--r:11.76"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/newmar.svg);--w:108px;--r:2.5"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/marathon.svg);--w:98px;--r:2.04"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/renegade.png);--w:150px;--r:4.01"></span><span class="mdot"></span><span class="mlogo" style="--src:url(/brands/showhauler.png);--w:96px;--r:2.09"></span><span class="mdot"></span></div></div>
-</section>
-
-<div class="card c1">
-<section id="offer" class="sw offer">
-  <div class="r">
-    <p class="label">YOUR NEXT CHAPTER STARTS HERE</p>
-    <h2 class="stitle">A great offer.<br>A fresh start.</h2>
-    <p class="scopy">Ready to move on from your coach? Tell us a little about it. We’ll take it from there.</p>
-    <div class="perks"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>No obligation. No pressure.</span><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>No listings, tire-kickers, or hidden fees.</span><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>A straightforward offer from a real person.</span></div>
-    <div class="ocall"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><div>Prefer a conversation?<a href="tel:8008631848">800-863-1848</a></div></div>
+<section id="offer" class="sec band"><div class="container grid12 offer-grid">
+  <div class="offer-copy r">
+    <h2>A great offer.<br>A fresh start.</h2>
+    <p class="lead">Ready to move on from your coach? Tell us a little about it. We’ll take it from there.</p>
   </div>
-  <div class="r" style="--d:.1s">
-    <form class="oform" id="f">
-      <div class="fhead"><h3 id="ft">A little about your RV</h3><div><span class="scount" id="sc">STEP 1 OF 2</span><div class="prog"><i class="active"></i><i id="bar2"></i></div></div></div>
+  <ul class="perks r">
+    <li>Free of obligation and pressure.</li>
+    <li>A straightforward offer from a real person.</li>
+    <li>No listings, tire-kickers, or hidden fees.</li>
+  </ul>
+  <div class="stock r">
+    <form id="f">
+      <div class="fhead"><h3 id="ft">A little about your RV</h3><div class="fstep"><span id="sc">Step 1 of 2</span><div class="prog" aria-hidden="true"><i class="active"></i><i id="bar2"></i></div></div></div>
       <div id="p1">
         <div class="fgrid">
           <label class="field">Year <span class="req">*</span><input name="year" placeholder="e.g. 2018" inputmode="numeric" pattern="[0-9]{4}" data-r required></label>
@@ -287,7 +347,7 @@ a{color:inherit;text-decoration:none}
           <label class="field">Mileage <span class="opt">(optional)</span><input name="mi" placeholder="e.g. 35,000" inputmode="numeric"></label>
           <label class="field fwide">Anything else we should know? <span class="opt">(optional)</span><textarea name="c" rows="2" placeholder="Condition, upgrades, or any questions…"></textarea></label>
         </div>
-        <label class="upl"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg><span id="fn">Add a photo of your RV</span><span class="opt" id="fo">(optional)</span><input type="file" name="photo" accept="image/*" id="fi"></label>
+        <label class="upl"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></svg><span id="fn">Add a photo of your RV</span><span class="opt" id="fo">(optional)</span><input type="file" name="photo" accept="image/*" id="fi"></label>
       </div>
       <div id="p2" hidden>
         <div class="fgrid">
@@ -296,93 +356,68 @@ a{color:inherit;text-decoration:none}
           <label class="field">Email address *<input name="email" type="email" autocomplete="email" placeholder="you@example.com"></label>
           <label class="field">ZIP / Postal code *<input name="zip" autocomplete="postal-code" placeholder="ZIP code"></label>
         </div>
-        <div style="height:20px"></div>
       </div>
       <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
       <p class="ferr" id="err" role="alert" hidden></p>
-      <div class="frow"><button type="button" class="b bicon" id="bk" aria-label="Back to RV details" hidden><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button><button type="button" class="b dark" id="nx"><span id="nxl">Continue to your cash offer</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
-      <p class="fpriv"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"></rect><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>Your information stays private. No spam, ever.</p>
+      <p class="fpriv">Your information stays private. No spam, ever.</p>
+      <div class="frow"><button type="button" class="btn ghost" id="bk" aria-label="Back to RV details" hidden><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button><button type="button" class="btn" id="nx"><span id="nxl">Continue to your cash offer</span></button></div>
     </form>
-    <div class="oform" id="ok" hidden>
-      <div class="thanks"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <div id="ok" class="thanks" hidden>
       <h3 class="tt">Thank you for reaching out.</h3>
-      <p class="scopy">A real person will contact you shortly about your RV.</p>
+      <p>A real person will contact you shortly about your RV.</p>
     </div>
   </div>
-</section>
-<div class="cdim" aria-hidden="true"></div>
-</div>
-
-<section class="pband card c2" id="how"><div class="sw">
-  <div class="hrow"><div class="r"><p class="label">A SIMPLER WAY TO SELL</p><h2 class="stitle">Three steps. Zero stress.</h2></div><a class="b tlink" href="#offer">The road to your offer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></div>
-  <div class="sgrid">
-    <div class="pstep r"><div class="snum">01</div><h3>Tell us about your RV</h3><p>Share the year, make, model and mileage. Add a photo if you have one. It only takes a few minutes.</p></div>
-    <div class="pstep r" style="--d:.1s"><div class="snum">02</div><h3>Get your cash offer</h3><p>A real person will reach out with an offer backed by more than 30 years in the RV business.</p></div>
-    <div class="pstep r" style="--d:.2s"><div class="snum">03</div><h3>We handle the rest</h3><p>We take care of the paperwork, coordinate any bank payoff and pick up your coach at no cost to you.</p></div>
-  </div>
-</div><div class="cdim" aria-hidden="true"></div>
-</section>
-
-<div class="card c3">
-<section class="sw whys" id="why">
-  <p class="label r">NOT YOUR TYPICAL RV BUYER</p>
-  <h2 class="stitle r">Less hassle. More possibility.</h2>
-  <div class="bgrid">
-    <div class="ben r"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m14 20 2 2 4-4"/></svg><h3>Paperwork, handled.</h3><p>From title transfers to bank payoffs, we take care of the details so you don’t have to.</p></div>
-    <div class="ben r" style="--d:.1s"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg><h3>Pickup, on us.</h3><p>Your coach. Your location. We arrange fast, free pickup anywhere in the country.</p></div>
-    <div class="ben r" style="--d:.2s"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><h3>A real person.</h3><p>No call centers. No endless hold music. Just straightforward communication from the start.</p></div>
-    <div class="ben r" style="--d:.3s"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg><h3>More cash to you.</h3><p>Our experience and nationwide network help us see the real value in your coach.</p></div>
-  </div>
-</section>
-</div>
-</div>
-</main>
-
-<section class="cband" id="contact"><div class="sw cinner">
-  <div><h2>New roads are waiting.</h2><p>Let’s make selling your RV the easy part.</p></div>
-  <a class="b gold" href="tel:8008631848"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Let’s talk · 800-863-1848 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+  <p class="ocall r">Prefer a conversation? <a href="tel:8008631848">800-863-1848</a></p>
 </div></section>
 
-<footer class="sw sfoot"><p>© 2026 Southwest Luxury Coach. All rights reserved.</p><nav class="flinks" aria-label="Footer"><a href="/about-us/">About us</a><a href="/faq/">FAQs</a><a href="/privacy-policy/">Privacy policy</a><a href="/sitemap/">Sitemap</a></nav><span>Based in Arizona. Here for you nationwide.</span></footer>
+<section id="how" class="sec"><div class="container">
+  <div class="head r"><h2>Three steps. Zero stress.</h2><a class="link" href="#offer">The road to your offer</a></div>
+  <ol class="steps">
+    <li class="r"><h3>Tell us about your RV</h3><p>Share the year, make, model and mileage. Add a photo if you have one. It only takes a few minutes.</p></li>
+    <li class="r"><h3>Get your cash offer</h3><p>A real person will reach out with an offer backed by more than 30 years in the RV business.</p></li>
+    <li class="r"><h3>We handle the rest</h3><p>We take care of the paperwork, coordinate any bank payoff and pick up your coach at no cost to you.</p></li>
+  </ol>
+</div></section>
+
+<section id="why" class="sec band"><div class="container">
+  <div class="head r"><h2>Less hassle. More possibility.</h2><p class="lead">Not your typical RV buyer.</p></div>
+  <ul class="rows">
+    <li class="r"><h3>Paperwork, handled.</h3><p>From title transfers to bank payoffs, we take care of the details so you don’t have to.</p></li>
+    <li class="r"><h3>Pickup, on us.</h3><p>Your coach, your location. We arrange fast, free pickup anywhere in the country.</p></li>
+    <li class="r"><h3>A real person.</h3><p>No call centers and no endless hold music, just straightforward communication from the start.</p></li>
+    <li class="r"><h3>More cash to you.</h3><p>Our experience and nationwide network help us see the real value in your coach.</p></li>
+  </ul>
+</div></section>
+</main>
+
+<section class="sec band3" id="contact"><div class="container close-inner">
+  <div class="r"><h2>New roads are waiting.</h2><p class="lead">Let’s make selling your RV the easy part.</p></div>
+  <a class="btn" href="tel:8008631848">Let’s talk: 800-863-1848</a>
+</div></section>
+
+<footer class="container sfoot"><p>© 2026 Southwest Luxury Coach. All rights reserved.</p><nav class="flinks" aria-label="Footer"><a href="/about-us/">About us</a><a href="/faq/">FAQs</a><a href="/privacy-policy/">Privacy policy</a><a href="/sitemap/">Sitemap</a></nav><span>Based in Arizona. Here for you nationwide.</span></footer>
 
 <script>
 document.documentElement.classList.add('js');
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.r').forEach(function(el){io.observe(el)});
-var nav=document.getElementById('nav');addEventListener('scroll',function(){nav.classList.toggle('s',scrollY>10)},{passive:true});
 var hb=document.getElementById('hb'),mm=document.getElementById('mm');
 function setMenu(o){hb.classList.toggle('open',o);hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Close menu':'Open menu');mm.classList.toggle('open',o);mm.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':''}
 hb.onclick=function(){setMenu(!hb.classList.contains('open'))};
 [].forEach.call(mm.querySelectorAll('a'),function(a){a.addEventListener('click',function(){setMenu(false)})});
-var brandsEl=document.querySelector('.brands'),redu=window.matchMedia('(prefers-reduced-motion:reduce)');
-function cardTop(c){var y=brandsEl.getBoundingClientRect().bottom+scrollY;for(var i=0;i<cards.indexOf(c);i++)y+=cards[i].offsetHeight+(parseFloat(getComputedStyle(cards[i]).marginBottom)||0);return y}
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;var id=a.getAttribute('href').slice(1),t=id&&document.getElementById(id),c=t&&t.closest('.card');if(!c)return;
-e.preventDefault();scrollTo({top:Math.round(cardTop(c)),left:0,behavior:redu.matches?'auto':'smooth'});try{history.replaceState(null,'','#'+id)}catch(x){}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mm.classList.contains('open')){setMenu(false);hb.focus()}});
-addEventListener('resize',function(){if(innerWidth>980&&mm.classList.contains('open'))setMenu(false)});
-var nl=[].slice.call(document.querySelectorAll('.nlinks a[href^="#"]')),hero=document.getElementById('top'),ticking=false;
+addEventListener('resize',function(){if(innerWidth>960&&mm.classList.contains('open'))setMenu(false)});
+var nl=[].slice.call(document.querySelectorAll('.nlinks a[href^="#"]')),ticking=false;
 function onScroll(){ticking=false;
 var line=innerHeight*.45,cur='top';['how','contact'].forEach(function(id){var e=document.getElementById(id);if(e&&e.getBoundingClientRect().top<=line)cur=id});
 if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur='contact';
-nl.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur)});
-var p=Math.min(1,Math.max(0,scrollY/(hero.offsetHeight*.9)));hero.style.setProperty('--p',(p*.55).toFixed(3));dimCards();
-var mx=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.transform='scaleX('+(mx>0?Math.min(1,Math.max(0,scrollY/mx)):0).toFixed(4)+')'}
-var cards=[].slice.call(document.querySelectorAll('.card'));
-function pins(){cards.slice(0,2).forEach(function(c){c.style.top=Math.min(0,(document.getElementById('lvh').offsetHeight||document.documentElement.clientHeight)-c.offsetHeight)+'px'})}
-function dimCards(){var vh=innerHeight;cards.slice(0,2).forEach(function(c,i){var d=c.querySelector('.cdim'),nx=cards[i+1].getBoundingClientRect().top;d.style.opacity=(Math.min(1,Math.max(0,(vh-nx)/vh))*.4).toFixed(3)})}
-pins();addEventListener('resize',pins);addEventListener('load',pins);
-if(window.ResizeObserver)cards.slice(0,2).forEach(function(c){new ResizeObserver(pins).observe(c)});
+nl.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+cur)})}
 addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
 addEventListener('resize',onScroll);onScroll();
 var f=document.getElementById('f'),p1=document.getElementById('p1'),p2=document.getElementById('p2'),nx=document.getElementById('nx'),bk=document.getElementById('bk'),err=document.getElementById('err'),step=0,sending=false;
-var fy=null;
-function endTyping(t){var a=document.activeElement;if(a&&f.contains(a)&&/INPUT|TEXTAREA/.test(a.tagName))return;var vv=window.visualViewport;if(vv&&innerHeight-vv.height>80&&t<15){setTimeout(function(){endTyping(t+1)},100);return}
-if(fy!==null&&Math.abs(scrollY-fy)<300)scrollTo({top:fy,left:0,behavior:'instant'});fy=null;document.body.classList.remove('typing')}
-f.addEventListener('focusin',function(e){if(/INPUT|TEXTAREA/.test(e.target.tagName)){if(fy===null)fy=scrollY;document.body.classList.add('typing')}});
-f.addEventListener('focusout',function(){setTimeout(function(){endTyping(0)},50)});
 function go(n){step=n;p1.hidden=n!==0;p2.hidden=n!==1;bk.hidden=n===0;
 document.getElementById('ft').textContent=n?'How can we reach you?':'A little about your RV';
-document.getElementById('sc').textContent='STEP '+(n+1)+' OF 2';
+document.getElementById('sc').textContent='Step '+(n+1)+' of 2';
 document.getElementById('bar2').className=n?'active':'';
 document.getElementById('nxl').textContent=n?'Get my cash offer':'Continue to your cash offer';
 nx.type=n?'submit':'button';err.hidden=true;
@@ -745,49 +780,46 @@ async function api(request, env, ctx, url) {
 
 // ---------- Secondary pages (FAQ, About, Privacy, Sitemap): content copied from the original site ----------
 const SUB_CSS = `<style>
-.phead{background:var(--hero);color:var(--heroink);padding:150px 0 72px;position:relative;overflow:hidden}
-.phead::before{content:"";position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,var(--heroacc),transparent 65%);opacity:.14;left:-220px;top:-300px;pointer-events:none}
-.phead .wrap{position:relative}
-.phead .eyebrow{color:var(--heroacc)}
-.phead h1{font-size:clamp(40px,5.5vw,68px);margin:16px 0 0}
-.phead p{color:var(--herom);max-width:560px;margin:18px 0 0;font-size:18px}
-.doc{padding:72px 0 110px}
-.doc .wrap{max-width:820px}
-.faq details{border-top:1px solid var(--line)}
-.faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;font:400 24px/1.25 Fraunces,Georgia,serif;letter-spacing:-.01em}
+.phead{padding-block:var(--space-3xl) var(--space-2xl);border-bottom:var(--rule-hair) solid var(--color-rule)}
+.phead h1{font-size:var(--text-display-s);max-width:22ch}
+.phead .lead{margin-top:var(--space-lg);color:var(--color-ink-2)}
+.doc{padding-block:var(--space-2xl) var(--section-gap-s)}
+.doc .container>*{max-width:820px}
+.faq details{border-top:var(--rule-hair) solid var(--color-rule)}
+.faq details:first-child{border-top:var(--rule-head) solid var(--color-ink)}
+.faq details:last-child{border-bottom:var(--rule-hair) solid var(--color-rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:var(--space-lg);padding-block:var(--space-lg);font-family:var(--font-display);font-weight:var(--serif-small);font-size:var(--text-xl);line-height:1.25;color:var(--color-ink)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font:400 22px/1 Inter,sans-serif;color:var(--acc);transition:transform .3s}
+.faq summary::after{content:"+";flex:none;width:36px;height:36px;border:var(--rule-hair) solid var(--color-rule);border-radius:var(--radius-pill);display:grid;place-items:center;font:400 22px/1 var(--font-body);color:var(--color-ink);transition:transform var(--dur-short) var(--ease-out)}
 .faq details[open] summary::after{transform:rotate(45deg)}
-.faq summary:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:8px}
-.faq .ans{padding:0 56px 28px 0;color:var(--mut);margin:0}
-.about{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:start}
-.about .txt p{margin:0;color:var(--mut);font-size:18px}
-.infocard{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px}
-.infocard small{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:6px}
-.infocard h3{font-size:26px;margin:0 0 22px}
-.infocard h3 a:hover{color:var(--acc)}
-.infocard .row2{padding-top:18px;margin-top:18px;border-top:1px solid var(--line);color:var(--mut)}
-.infocard .row2 b{display:block;color:var(--ink);font-weight:600}
-.where{margin-top:64px}
-.where h2{font-size:clamp(30px,4vw,44px);margin-bottom:8px}
-.where p{margin:0 0 22px;color:var(--mut)}
-.map{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--bg2)}
+.faq summary:hover{color:var(--color-accent)}
+.faq .ans{padding:0 var(--space-2xl) var(--space-lg) 0;color:var(--color-ink-2);margin:0}
+.about{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:var(--space-2xl);align-items:start}
+.about .txt p{margin:0;color:var(--color-ink-2);font-size:var(--text-lg)}
+.infocard{position:relative;padding:var(--space-xl);border-radius:2px;background:var(--fibre) 0 0 / 220px,linear-gradient(160deg,var(--card-lit),var(--color-card) 55%,var(--card-shade));box-shadow:var(--shadow-card),inset 1px 1px 0 var(--lit)}
+.infocard small{display:block;margin-bottom:var(--space-xs);font-size:var(--text-sm);color:var(--color-muted)}
+.infocard h3{font-size:var(--text-2xl);margin:0 0 var(--space-lg)}
+.infocard h3 a{text-decoration:none}
+.infocard h3 a:hover{text-decoration:underline;text-decoration-color:var(--color-accent)}
+.infocard .row2{padding-top:var(--space-md);margin-top:var(--space-md);border-top:var(--rule-hair) solid var(--color-card-edge);color:var(--color-muted)}
+.infocard .row2 b{display:block;color:var(--color-ink);font-weight:var(--serif-small)}
+.where{margin-top:var(--space-2xl)}
+.where h2{font-size:var(--text-section);margin-bottom:var(--space-xs)}
+.where p{margin:0 0 var(--space-lg);color:var(--color-ink-2)}
+.map{overflow:hidden;border:var(--rule-hair) solid var(--color-rule);background:var(--color-paper-2)}
 .map iframe{display:block;width:100%;height:380px;border:0}
-.legal h3{font-size:28px;margin:46px 0 12px}
+.legal h3{font-size:var(--text-2xl);margin:var(--space-xl) 0 var(--space-sm)}
 .legal h3:first-child{margin-top:0}
-.legal p,.legal li{color:var(--mut);margin:0 0 14px}
-.legal strong{color:var(--ink);font-weight:600}
-.legal ul{padding-left:22px;margin:0 0 14px}
-.legal a{color:var(--acc);text-decoration:underline;text-underline-offset:3px}
-.smap h2{font-size:30px;margin-bottom:18px}
-.smap ul{list-style:none;margin:0;padding:0}
-.smap li{border-top:1px solid var(--line)}
-.smap li:last-child{border-bottom:1px solid var(--line)}
-.smap a{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:18px;transition:color .2s,padding .3s}
-.smap a::after{content:"→";color:var(--acc)}
-.smap a:hover{color:var(--acc);padding-left:8px}
-@media (max-width:900px){.about{grid-template-columns:1fr;gap:32px}.phead{padding:118px 0 56px}.doc{padding:48px 0 80px}.faq summary{font-size:20px}.faq .ans{padding-right:0}.map iframe{height:300px}}
+.legal p,.legal li{color:var(--color-ink-2);margin:0 0 var(--space-md)}
+.legal strong{color:var(--color-ink);font-weight:var(--serif-small)}
+.legal ul{padding-left:var(--space-lg);margin:0 0 var(--space-md)}
+.legal a{color:var(--color-ink);text-decoration:underline;text-decoration-color:var(--color-accent);text-underline-offset:0.2em}
+.smap h2{font-size:var(--text-2xl);margin-bottom:var(--space-lg)}
+.smap ul{list-style:none;margin:0;padding:0;border-top:var(--rule-head) solid var(--color-ink)}
+.smap li{border-bottom:var(--rule-hair) solid var(--color-rule)}
+.smap a{display:block;padding-block:var(--space-md);font-size:var(--text-lg);text-decoration:none;transition:color var(--dur-short) var(--ease-out)}
+.smap a:hover{color:var(--color-accent)}
+@media (max-width:60rem){.about{grid-template-columns:1fr;gap:var(--space-xl)}.phead{padding-block:var(--space-2xl) var(--space-xl)}.doc{padding-block:var(--space-xl) var(--section-gap-s)}.faq summary{font-size:var(--text-lg)}.faq .ans{padding-right:0}.map iframe{height:300px}}
 </style>`;
 
 const SUB_SCRIPT = `<script>
@@ -804,6 +836,7 @@ addEventListener('resize',function(){if(innerWidth>980&&mm.classList.contains('o
 
 function subpage(o) {
   const head = html.slice(0, html.indexOf('</head>'))
+    .replace(/<meta name="description"[^>]*>\n?/, '')
     .replace(/<title>[^<]*<\/title>/, '<title>' + o.title + ' | Sell My RV Online</title>\n<meta name="description" content="' + o.desc + '">');
   const nav = html.slice(html.indexOf('<nav id="nav"'), html.indexOf('<!--/nav-->'))
     .replace(/href="#top"/g, 'href="/"').replace(/href="#how"/g, 'href="/#how"')
@@ -811,8 +844,8 @@ function subpage(o) {
     .replace('<li><a href="/faq/">', o.active ? '<li><a class="on" href="/faq/">' : '<li><a href="/faq/">');
   const footer = html.slice(html.indexOf('<footer'), html.indexOf('</footer>') + 9);
   return head + SUB_CSS + '\n</head>\n<body>\n' + nav +
-    '<header class="phead"><div class="wrap"><span class="eyebrow">' + o.eyebrow + '</span><h1>' + o.h1 + '</h1>' + (o.lead ? '<p>' + o.lead + '</p>' : '') + '</div></header>\n' +
-    '<main class="doc"><div class="wrap">' + o.body + '</div></main>\n' + footer + '\n' + SUB_SCRIPT + '\n</body>\n</html>\n';
+    '<header class="phead"><div class="container"><h1>' + o.h1 + '</h1>' + (o.lead ? '<p class="lead">' + o.lead + '</p>' : '') + '</div></header>\n' +
+    '<main class="doc"><div class="container">' + o.body + '</div></main>\n' + footer + '\n' + SUB_SCRIPT + '\n</body>\n</html>\n';
 }
 
 const FAQS = [
@@ -882,22 +915,22 @@ const SITEMAP_LINKS = [
 const PAGES = {
   '/faq': subpage({
     title: 'FAQs', desc: 'Answers to common questions about selling your RV to Sell My RV Online: valuation, documents, payment, insurance and pickup.',
-    eyebrow: 'FAQs', h1: 'Frequently Asked <em>Questions</em>', active: true,
+    eyebrow: 'FAQs', h1: 'Frequently Asked Questions', active: true,
     body: '<div class="faq">' + FAQS.map(function (f) { return '<details><summary>' + f[0] + '</summary><p class="ans">' + f[1] + '</p></details>'; }).join('') + '</div>',
   }),
   '/about-us': subpage({
     title: 'About Us', desc: 'Sell My RV Online is committed to a hassle-free selling process for pre-owned luxury coaches at the best prices. Located in Phoenix, Arizona.',
-    eyebrow: 'About us', h1: 'About <em>Us</em>',
+    eyebrow: 'About us', h1: 'About Us',
     body: '<div class="about"><div class="txt"><p>Sell My RV Online is committed to providing our customers a hassle-free selling process of their pre-owned luxury coaches at the best prices. Located in Phoenix, Arizona, our sales side of the business offers a variety of Prevost bus conversions and top-end diesel fiberglass RVs. We strive to offer customers a wide variety of RVs to not only fill the dreams of the customer but to suit their budget as well. Customer service before, during, and after the sale is our number one priority.</p></div>' +
       '<aside class="infocard"><small>Call us</small><h3><a href="tel:800-863-1848">800-863-1848</a></h3><div class="row2"><b>Business Hours</b>By appointment only</div></aside></div>' +
-      '<section class="where"><h2>We are located in <em>Phoenix, AZ</em></h2><p>' + ABOUT_ADDRESS + '</p><div class="map"><iframe loading="lazy" title="' + ABOUT_ADDRESS + '" src="https://maps.google.com/maps?q=' + encodeURIComponent(ABOUT_ADDRESS) + '&amp;t=m&amp;z=9&amp;output=embed&amp;iwloc=near" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>',
+      '<section class="where"><h2>We are located in Phoenix, AZ</h2><p>' + ABOUT_ADDRESS + '</p><div class="map"><iframe loading="lazy" title="' + ABOUT_ADDRESS + '" src="https://maps.google.com/maps?q=' + encodeURIComponent(ABOUT_ADDRESS) + '&amp;t=m&amp;z=9&amp;output=embed&amp;iwloc=near" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>',
   }),
   '/privacy-policy': subpage({
     title: 'Privacy Policy', desc: 'How Sell My RV Online collects, uses and shares your personal information, and how to exercise your privacy rights.',
-    eyebrow: 'Legal', h1: 'Privacy <em>Policy</em>', body: '<div class="legal">' + PRIVACY_HTML + '</div>',
+    eyebrow: 'Legal', h1: 'Privacy Policy', body: '<div class="legal">' + PRIVACY_HTML + '</div>',
   }),
   '/sitemap': subpage({
-    title: 'Sitemap', desc: 'All pages of Sell My RV Online.', eyebrow: 'Sitemap', h1: '<em>Sitemap</em>',
+    title: 'Sitemap', desc: 'All pages of Sell My RV Online.', eyebrow: 'Sitemap', h1: 'Sitemap',
     body: '<section class="smap"><h2>Pages</h2><ul>' + SITEMAP_LINKS.map(function (l) { return '<li><a href="' + l[0] + '">' + l[1] + '</a></li>'; }).join('') + '</ul></section>',
   }),
 };
