@@ -9,6 +9,7 @@ const html = `<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -41,7 +42,7 @@ const html = `<!DOCTYPE html>
   --shadow-card: 0 0 0 1px oklch(30% 0.03 55 / 0.05), 0.5px 1px 1px oklch(30% 0.03 55 / 0.08), 3px 8px 14px -6px oklch(30% 0.03 55 / 0.14), 14px 36px 64px -28px oklch(30% 0.03 55 / 0.3);
   --tracking-display: -0.018em; --tracking-statement: -0.022em; --display-weight: 300; --statement-weight: 300; --serif-small: 400;
   --nav-h: 72px;
-  --paint-silver: #d4d8e0; --paint-obsidian: #181a20; --paint-desert: #d6cbb5; --paint-midnight: #1e3a5f;
+  --paint-obsidian: #0d0f14; --paint-titanium: #cbd5e1; --paint-crimson: #7f1d1d; --paint-emerald: #064e3b;
   --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
@@ -239,7 +240,7 @@ button, input, select, textarea { font: inherit; }
 .story-swatch:hover { transform: translateY(-2px); }
 .story-swatch:active { transform: translateY(0); }
 .story-swatch[aria-pressed="true"] { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.sw-silver { background: var(--paint-silver); } .sw-obsidian { background: var(--paint-obsidian); } .sw-desert { background: var(--paint-desert); } .sw-midnight { background: var(--paint-midnight); }
+.sw-obsidian { background: var(--paint-obsidian); } .sw-titanium { background: var(--paint-titanium); } .sw-crimson { background: var(--paint-crimson); } .sw-emerald { background: var(--paint-emerald); }
 .story:not(.story--live) .story-controls, .story:not(.story--live) .story-paints { display: none; }
 .story--off .story-stage { display: none; }
 .story--off .story-chapters { margin-top: 0; }
@@ -457,18 +458,18 @@ button, input, select, textarea { font: inherit; }
     </div></div></article>
     <article class="story-chap"><div class="container grid12"><div class="story-card">
       <h2>Take a closer look.</h2>
-      <p>Open the slide-out, drop the awning, see through the roof, or turn the coach yourself.</p>
+      <p>Open the slide-outs, drop the awning, lift the roof, or turn the coach yourself.</p>
       <div class="story-controls">
-        <button class="btn" id="story-slide" type="button">Slide-out</button>
-        <button class="btn" id="story-awning" type="button">Awning</button>
-        <button class="btn" id="story-xray" type="button">Roof x-ray</button>
+        <button class="btn" id="story-slide" type="button">Slide-outs</button>
+        <button class="btn" id="story-awning" type="button">Awning and bays</button>
+        <button class="btn" id="story-xray" type="button">Roof cutaway</button>
         <button class="btn" id="story-free" type="button" aria-pressed="false">Rotate 360 degrees</button>
       </div>
       <div class="story-paints"><span>Paint</span>
-        <button class="story-swatch sw-silver" type="button" data-paint="silver" aria-label="Silver" aria-pressed="true"></button>
-        <button class="story-swatch sw-obsidian" type="button" data-paint="obsidian" aria-label="Obsidian" aria-pressed="false"></button>
-        <button class="story-swatch sw-desert" type="button" data-paint="desert" aria-label="Desert pearl" aria-pressed="false"></button>
-        <button class="story-swatch sw-midnight" type="button" data-paint="midnight" aria-label="Midnight blue" aria-pressed="false"></button>
+        <button class="story-swatch sw-obsidian" type="button" data-paint="obsidian" aria-label="Obsidian champagne" aria-pressed="true"></button>
+        <button class="story-swatch sw-titanium" type="button" data-paint="titanium" aria-label="Titanium glacier" aria-pressed="false"></button>
+        <button class="story-swatch sw-crimson" type="button" data-paint="crimson" aria-label="Crimson carbon" aria-pressed="false"></button>
+        <button class="story-swatch sw-emerald" type="button" data-paint="emerald" aria-label="Emerald executive" aria-pressed="false"></button>
       </div>
     </div></div></article>
   </div>
