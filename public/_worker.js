@@ -41,6 +41,7 @@ const html = `<!DOCTYPE html>
   --shadow-card: 0 0 0 1px oklch(30% 0.03 55 / 0.05), 0.5px 1px 1px oklch(30% 0.03 55 / 0.08), 3px 8px 14px -6px oklch(30% 0.03 55 / 0.14), 14px 36px 64px -28px oklch(30% 0.03 55 / 0.3);
   --tracking-display: -0.018em; --tracking-statement: -0.022em; --display-weight: 300; --statement-weight: 300; --serif-small: 400;
   --nav-h: 72px;
+  --paint-silver: #d4d8e0; --paint-obsidian: #181a20; --paint-desert: #d6cbb5; --paint-midnight: #1e3a5f;
   --fibre: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
@@ -212,6 +213,46 @@ button, input, select, textarea { font: inherit; }
 .close-inner h2 { font-size: var(--text-display-s); }
 .close-inner .btn { grid-column: 9 / span 4; justify-self: end; }
 
+/* scrollytelling: illustrative 3D coach (public/story.js) */
+.story { position: relative; background: var(--color-ink); }
+.story-stage { position: sticky; top: var(--nav-h); z-index: 0; height: calc(100svh - var(--nav-h)); overflow: hidden; background: var(--color-ink); pointer-events: none; }
+.story-canvas { position: absolute; inset: 0; }
+.story-canvas canvas { display: block; width: 100%; height: 100%; }
+.story-note { position: absolute; left: var(--gutter); bottom: var(--space-md); color: var(--color-paper-3); font-size: var(--text-sm); }
+.story-exit { display: none; position: absolute; right: var(--gutter); bottom: var(--space-md); background: var(--color-paper); }
+.story-stage.free { z-index: 2; pointer-events: auto; }
+.story-stage.free .story-canvas { touch-action: none; cursor: grab; }
+.story-stage.free .story-exit { display: inline-flex; }
+.story-chapters { position: relative; z-index: 1; margin-top: calc(var(--nav-h) - 100svh); pointer-events: none; }
+.story-chap { min-height: 90svh; display: flex; align-items: center; }
+.story-chap .container { pointer-events: none; }
+.story-card { grid-column: 1 / span 5; pointer-events: auto; position: relative; padding: var(--space-xl); border-radius: 2px; display: grid; gap: var(--space-md); justify-items: start; background: var(--fibre) 0 0 / 220px, linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade)); box-shadow: var(--shadow-card), inset 1px 1px 0 var(--lit); }
+.story-card::before { content: ""; position: absolute; inset: 0.875rem; border: var(--rule-hair) solid var(--color-card-edge); pointer-events: none; }
+.story-card > * { position: relative; }
+.story-chap:nth-child(even) .story-card { grid-column: 8 / span 5; }
+.story-card h2 { font-size: var(--text-display-s); }
+.story-controls { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.story-controls .btn { min-height: 44px; }
+.story-controls .btn[aria-pressed="true"] { background: var(--color-ink); color: var(--color-paper); }
+.story-paints { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-muted); font-size: var(--text-sm); }
+.story-swatch { width: 32px; height: 32px; padding: 0; border: var(--rule-hair) solid var(--color-ink); border-radius: var(--radius-pill); cursor: pointer; transition: transform var(--dur-micro) var(--ease-out); }
+.story-swatch:hover { transform: translateY(-2px); }
+.story-swatch:active { transform: translateY(0); }
+.story-swatch[aria-pressed="true"] { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.sw-silver { background: var(--paint-silver); } .sw-obsidian { background: var(--paint-obsidian); } .sw-desert { background: var(--paint-desert); } .sw-midnight { background: var(--paint-midnight); }
+.story:not(.story--live) .story-controls, .story:not(.story--live) .story-paints { display: none; }
+.story--off .story-stage { display: none; }
+.story--off .story-chapters { margin-top: 0; }
+.story--off .story-chap { min-height: 0; padding-block: var(--space-xl); }
+.story--static .story-stage { position: relative; top: auto; height: 60svh; }
+.story--static .story-chapters { margin-top: 0; }
+.story--static .story-chap { min-height: 0; padding-block: var(--space-xl); }
+@media (max-width: 60rem) {
+  .story-chap { min-height: 100svh; align-items: flex-end; padding-bottom: var(--space-lg); }
+  .story-card, .story-chap:nth-child(even) .story-card { grid-column: 1 / -1; padding: var(--space-lg); }
+  .story-card h2 { font-size: var(--text-2xl); }
+  .story-note { display: none; }
+}
 /* footer */
 .sfoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md) var(--space-lg); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-muted); font-size: var(--text-sm); }
 .flinks { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); }
@@ -390,6 +431,49 @@ button, input, select, textarea { font: inherit; }
 </div></section>
 </main>
 
+<section class="story" id="story" aria-label="A 3D look at a motorcoach">
+  <div class="story-stage" id="story-stage">
+    <div class="story-canvas" id="story-canvas" role="img" aria-label="Illustrative 3D model of a luxury motorcoach"></div>
+    <p class="story-note">Illustrative 3D model, not your coach.</p>
+    <button class="btn story-exit" id="story-exit" type="button">Leave 360 view</button>
+  </div>
+  <div class="story-chapters">
+    <article class="story-chap"><div class="container grid12"><div class="story-card">
+      <h2>We come to you.</h2>
+      <p>Free nationwide pickup. Wherever you are, we come to you.</p>
+    </div></div></article>
+    <article class="story-chap"><div class="container grid12"><div class="story-card">
+      <h2>Every detail counts.</h2>
+      <p>Our experience and nationwide network help us see the real value in your coach.</p>
+    </div></div></article>
+    <article class="story-chap"><div class="container grid12"><div class="story-card">
+      <h2>You stay in control.</h2>
+      <p>You keep physical possession and title until you are satisfied with funding.</p>
+    </div></div></article>
+    <article class="story-chap"><div class="container grid12"><div class="story-card">
+      <h2>Inside and out.</h2>
+      <p>Tell us the year, make, model and mileage. Add a photo if you have one.</p>
+      <a class="btn" href="#offer">Get my cash offer</a>
+    </div></div></article>
+    <article class="story-chap"><div class="container grid12"><div class="story-card">
+      <h2>Take a closer look.</h2>
+      <p>Open the slide-out, drop the awning, see through the roof, or turn the coach yourself.</p>
+      <div class="story-controls">
+        <button class="btn" id="story-slide" type="button">Slide-out</button>
+        <button class="btn" id="story-awning" type="button">Awning</button>
+        <button class="btn" id="story-xray" type="button">Roof x-ray</button>
+        <button class="btn" id="story-free" type="button" aria-pressed="false">Rotate 360 degrees</button>
+      </div>
+      <div class="story-paints"><span>Paint</span>
+        <button class="story-swatch sw-silver" type="button" data-paint="silver" aria-label="Silver" aria-pressed="true"></button>
+        <button class="story-swatch sw-obsidian" type="button" data-paint="obsidian" aria-label="Obsidian" aria-pressed="false"></button>
+        <button class="story-swatch sw-desert" type="button" data-paint="desert" aria-label="Desert pearl" aria-pressed="false"></button>
+        <button class="story-swatch sw-midnight" type="button" data-paint="midnight" aria-label="Midnight blue" aria-pressed="false"></button>
+      </div>
+    </div></div></article>
+  </div>
+</section>
+
 <section class="sec band3" id="contact"><div class="container close-inner">
   <div class="r"><h2>New roads are waiting.</h2><p class="lead">Let’s make selling your RV the easy part.</p></div>
   <a class="btn" href="tel:8008631848">Let’s talk: 800-863-1848</a>
@@ -429,6 +513,7 @@ f.onsubmit=function(e){e.preventDefault();if(step===0){nx.click();return}if(send
 fetch('/api/lead',{method:'POST',body:new FormData(f)}).then(function(r){if(!r.ok)throw new Error('send');f.hidden=true;document.getElementById('ok').hidden=false;document.getElementById('ok').scrollIntoView({block:'center'})}).catch(function(){sending=false;nx.disabled=false;document.getElementById('nxl').textContent='Get my cash offer';err.textContent='We couldn’t send your request. Please try again or call 800-863-1848.';err.hidden=false})};
 go(0);
 </script>
+<script src="/story.js" defer></script>
 </body>
 </html>
 `;
