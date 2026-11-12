@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>myCROI | There is only you. Websites, CRM and payments built around your business</title>
+<meta name="description" content="Your website, your CRM, your estimates, invoices and payments, built custom around the way your business works. One login instead of five apps.">
+<meta name="theme-color" content="#08090c">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+<script>
+  document.documentElement.classList.add('js');
+  // Never let the loader trap the page if a script fails.
+  setTimeout(function () { document.documentElement.classList.add('loaded'); }, 6000);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader-scan"></div>
+  <p class="loader-label mono">Booting your brain</p>
+  <p class="loader-count"><span id="loader-num">000</span></p>
+  <div class="loader-bar"><i id="loader-bar"></i></div>
+</div>
+
+<canvas id="brain" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><i class="cursor-dot"></i><i class="cursor-ring"><span class="cursor-label"></span></i></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="myCROI home">
+    <svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 4 25 10v10l-10 6L5 20V10z" fill="none" stroke="currentColor" stroke-width="2"/><path class="brand-line" d="M10 17l4-5 3 3 4-5" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>my<b>CROI</b></span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#included">What's included</a>
+    <a href="#how">How it works</a>
+    <a href="#work">Our work</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#addons">Add-ons</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <a class="nav-login" href="https://mycroi.com/center/">myCenter login</a>
+    <a class="btn btn-lime magnetic" href="https://mycroi.com/start"><span>Start your site</span></a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu"><span class="sr">Open menu</span><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#included"><small>01</small>What's included</a>
+    <a href="#how"><small>02</small>How it works</a>
+    <a href="#work"><small>03</small>Our work</a>
+    <a href="#pricing"><small>04</small>Pricing</a>
+    <a href="#addons"><small>05</small>Add-ons</a>
+    <a href="#contact"><small>06</small>Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a class="btn btn-lime" href="https://mycroi.com/start"><span>Start your site</span></a>
+    <a class="btn btn-ghost" href="https://mycroi.com/center/"><span>myCenter login</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top" data-shape="brain">
+  <div class="hero-inner wrap">
+    <p class="eyebrow mono reveal-up"><span class="pulse"></span>Built around one business. Yours.</p>
+    <h1 class="hero-title">
+      <span class="line"><span class="split">There is</span></span>
+      <span class="line"><span class="split">only you.</span></span>
+      <span class="line lime"><span class="split">The search</span></span>
+      <span class="line lime"><span class="split">is over.</span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-lede reveal-up">Your website, your CRM, your estimates, invoices and payments, built custom around the way your business works. One login instead of five apps.</p>
+      <div class="hero-cta reveal-up">
+        <a class="btn btn-lime magnetic" href="https://mycroi.com/start"><span>Start your site</span></a>
+        <a class="btn btn-ghost magnetic" href="#pricing"><span>See plans and pricing</span></a>
+      </div>
+      <ul class="trust mono reveal-up">
+        <li>Hosting and SSL included</li>
+        <li>Every price on the page</li>
+        <li>Cancel anytime</li>
+      </ul>
+    </div>
+  </div>
+  <p class="scroll-cue mono" aria-hidden="true"><span>Scroll to explore</span><i></i></p>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>There is only you</span><b></b><span>The search is over</span><b></b><span>Made for you</span><b></b><span>Only yours</span><b></b>
+    <span>There is only you</span><b></b><span>The search is over</span><b></b><span>Made for you</span><b></b><span>Only yours</span><b></b>
+  </div>
+</div>
+
+<!-- FIVE APPS -> ONE -->
+<section class="five" id="five" data-shape="logo">
+  <div class="wrap five-grid">
+    <div class="five-col">
+      <p class="label mono">Today</p>
+      <h2 class="h2"><span class="split">Five apps.</span><br><span class="split">Five bills.</span></h2>
+      <ul class="apps">
+        <li><span class="app-name">A website builder</span><span class="app-pain">One more login</span></li>
+        <li><span class="app-name">A separate CRM</span><span class="app-pain">Another monthly bill</span></li>
+        <li><span class="app-name">An invoicing app</span><span class="app-pain">Doesn't talk to your CRM</span></li>
+        <li><span class="app-name">A payments app</span><span class="app-pain">Exports and spreadsheets</span></li>
+        <li><span class="app-name">A booking tool</span><span class="app-pain">One more app to check</span></li>
+      </ul>
+    </div>
+    <div class="five-col five-one">
+      <p class="label mono lime">With myCROI</p>
+      <h2 class="h2"><span class="split">One login.</span><br><span class="split">Built for you.</span></h2>
+      <ul class="ones">
+        <li>Your website</li>
+        <li>Your CRM</li>
+        <li>Estimates and invoices</li>
+        <li>Card payments</li>
+        <li>Online booking</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ONLY YOU -->
+<section class="only" id="only" data-shape="brain">
+  <div class="wrap">
+    <p class="label mono">Only you</p>
+    <p class="statement scrub-words">No two businesses are alike. Your site is built for you.</p>
+    <ol class="only-list">
+      <li>
+        <span class="num mono">01</span>
+        <h3>Written about you</h3>
+        <p>Your story, your services, your service area and your reviews, in words that sound like you. Not filler that a hundred other companies share.</p>
+      </li>
+      <li>
+        <span class="num mono">02</span>
+        <h3>Styled like you</h3>
+        <p>Your logo, your colors and your photos on a layout picked for your trade, so the site looks like your business and nobody else's.</p>
+      </li>
+      <li>
+        <span class="num mono">03</span>
+        <h3>Seen everywhere</h3>
+        <p>We send your site to Google and keep your pages current, and on Grow and Scale every finished job asks for a review, so people searching find the real you.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- TRADES: horizontal run -->
+<section class="trades" id="trades" data-shape="stars">
+  <div class="trades-sticky">
+    <div class="wrap trades-head">
+      <h2 class="h2"><span class="split">Six trades.</span> <span class="split lime">Six sites.</span></h2>
+      <p class="muted">Each one only yours. <span class="mono small">Illustrative examples</span></p>
+    </div>
+    <div class="trades-track" id="trades-track">
+      <article class="trade" style="--tc:#6ee7f2"><p class="trade-biz mono">Your Business</p><h3>Heating &amp; Air</h3><p class="trade-line">Cool again by tonight.</p><span class="trade-btn">Book a tune-up</span><span class="trade-no mono">01</span></article>
+      <article class="trade" style="--tc:#5fd4ff"><p class="trade-biz mono">Your Business</p><h3>Pool Care</h3><p class="trade-line">Crystal clear, every week.</p><span class="trade-btn">Start weekly service</span><span class="trade-no mono">02</span></article>
+      <article class="trade" style="--tc:#ff8a5c"><p class="trade-biz mono">Your Business</p><h3>Roofing Co.</h3><p class="trade-line">Storm damage? We're on it.</p><span class="trade-btn">Book a free inspection</span><span class="trade-no mono">03</span></article>
+      <article class="trade" style="--tc:#9be46b"><p class="trade-biz mono">Your Business</p><h3>Landscapes</h3><p class="trade-line">Yards worth showing off.</p><span class="trade-btn">Plan my yard</span><span class="trade-no mono">04</span></article>
+      <article class="trade" style="--tc:#ffd84a"><p class="trade-biz mono">Your Business</p><h3>Electric</h3><p class="trade-line">Power on. Same day.</p><span class="trade-btn">Book an electrician</span><span class="trade-no mono">05</span></article>
+      <article class="trade" style="--tc:#c9a7ff"><p class="trade-biz mono">Your Business</p><h3>Detailing</h3><p class="trade-line">Showroom shine, at your door.</p><span class="trade-btn">Book a detail</span><span class="trade-no mono">06</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included" id="included" data-shape="browser">
+  <div class="wrap">
+    <p class="label mono">01 What's included</p>
+    <h2 class="h2 big"><span class="split">One login.</span><br><span class="split lime">Your whole business.</span></h2>
+    <p class="lead muted">Your website, your leads, your estimates and invoices, and your payments, all in myCenter and all built for your trade.</p>
+  </div>
+  <div class="wrap inc-grid">
+    <div class="inc-list">
+      <article class="inc" data-panel="0">
+        <p class="mono small lime">01 / Every plan</p>
+        <h3>A website that brings in work.</h3>
+        <p class="muted">We write and build your site for your trade, then keep it fast, secure and easy to find on Google.</p>
+        <ul class="ticks"><li>Four layouts made for your trade</li><li>A page for every service and every area you cover</li><li>A sitemap sent to Google, so new pages get found</li><li>A quote form that takes photos</li><li>Your logo, colors, hours and answers to common questions</li><li>A free yourname.mycroi.com address, or your own domain</li></ul>
+      </article>
+      <article class="inc" data-panel="1">
+        <p class="mono small lime">02 / Every plan</p>
+        <h3>Every lead, the second it lands.</h3>
+        <p class="muted">Requests from your site land in one inbox with the photos customers send, and you hear about them right away.</p>
+        <ul class="ticks"><li>Lead inbox with customer photos</li><li>A text and an email for every new lead</li><li>Spam blocked before it reaches you</li><li>Visitors, and where your leads come from</li><li>A weekly summary in your inbox</li><li>CRM, pipeline and follow-up reminders on Grow</li></ul>
+      </article>
+      <article class="inc" data-panel="2">
+        <p class="mono small lime">03 / Grow and Scale</p>
+        <h3>Estimates customers approve online.</h3>
+        <p class="muted">Send a branded estimate from myCenter. Your customer opens it on your website and taps approve, and it turns into an invoice in one click.</p>
+        <ul class="ticks"><li>Branded estimates and invoices on your own website</li><li>Customers approve or decline online</li><li>One click from approved estimate to invoice</li><li>Automatic email and text reminders on unpaid invoices</li><li>Review request emails after every job</li></ul>
+      </article>
+      <article class="inc" data-panel="3">
+        <p class="mono small lime">04 / Scale</p>
+        <h3>Paid by card, straight to your account.</h3>
+        <p class="muted">Customers pay your invoice by card from a secure page on your website, and the money goes to your own Stripe account.</p>
+        <ul class="ticks"><li>A Pay now button on every invoice</li><li>Payments go to your own Stripe account</li><li>Mark cash and check payments paid</li><li>Online booking and team calendar included</li><li>Advanced reports and priority support</li></ul>
+      </article>
+    </div>
+    <div class="inc-stage" aria-hidden="true">
+      <div class="win">
+        <div class="win-bar"><i></i><i></i><i></i><span class="mono" id="win-url">yourbusiness.com</span></div>
+        <div class="win-body">
+          <div class="panel is-active" data-panel="0">
+            <div class="site-nav"><b>Your Business</b><span>Services</span><span>Areas</span><span>Reviews</span><em>Get a quote</em></div>
+            <p class="mono small lime">AC repair in Mesa</p>
+            <p class="site-h">Cool again by tonight.</p>
+            <span class="site-btn">Book a visit</span>
+            <div class="site-pages mono small"><span>AC repair</span><span>Furnace tune-ups</span><span>New installs</span><span>Mesa</span><span>Chandler</span><span>Gilbert</span></div>
+            <p class="mono small ok">Sitemap sent to Google</p>
+          </div>
+          <div class="panel" data-panel="1">
+            <div class="toast"><b>New lead from your website</b><span>Hannah I. · AC not cooling · 2 photos</span></div>
+            <div class="row"><i>HI</i><div><b>Hannah Ibarra</b><span>AC not cooling, upstairs unit</span></div><em class="tag tag-new">New</em></div>
+            <div class="row"><i>AC</i><div><b>Andre Chen</b><span>Condenser replacement</span></div><em class="tag">Estimate sent</em></div>
+            <div class="row"><i>NY</i><div><b>Noah Young</b><span>Spring tune-up</span></div><em class="tag tag-ok">Booked</em></div>
+            <div class="stats mono"><span>Visitors this week <b>412</b></span><span>From Google <b>68%</b></span><span>Pipeline <b>$8,940</b></span></div>
+          </div>
+          <div class="panel" data-panel="2">
+            <p class="mono small muted">Estimate 2041 · Andre Chen</p>
+            <div class="line-item"><span>Condenser fan motor</span><b>$420</b></div>
+            <div class="line-item"><span>Labor, 2 hours</span><b>$180</b></div>
+            <div class="line-item"><span>Refrigerant top-off</span><b>$95</b></div>
+            <div class="line-item total"><span>Total</span><b>$695</b></div>
+            <div class="est-btns"><span class="ghost">Decline</span><span class="lime-btn">Approve</span></div>
+            <p class="mono small ok">Approved. Turn into invoice</p>
+          </div>
+          <div class="panel" data-panel="3">
+            <p class="mono small muted">Invoice 1042 · Noah Young</p>
+            <p class="pay-amount">$287</p>
+            <div class="card-field mono">•••• 4242</div>
+            <span class="lime-btn wide">Pay now</span>
+            <div class="pay-steps mono small"><span class="ok">Paid by card</span><span>To your Stripe account</span><span>Receipt emailed</span></div>
+          </div>
+        </div>
+        <p class="win-note mono small">Illustrative example</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how" data-shape="brain">
+  <div class="wrap how-grid">
+    <div>
+      <p class="label mono">02 How it works</p>
+      <h2 class="h2 big"><span class="split">Live in</span><br><span class="split lime">four easy steps.</span></h2>
+      <ol class="steps">
+        <li><span class="mono">1</span><div><h3>Tell us your business name</h3><p>Type it once. We fill in your site and show the web addresses you can have right now.</p><em class="who mono">You</em></div></li>
+        <li><span class="mono">2</span><div><h3>Pick your plan</h3><p>Every price is on the page. Start where you are and move up any time.</p><em class="who mono">You</em></div></li>
+        <li><span class="mono">3</span><div><h3>We build your site</h3><p>Written for your trade, with a page for every service and every area you cover. You review it and change anything.</p><em class="who mono">We do this</em></div></li>
+        <li><span class="mono">4</span><div><h3>Go live and get paid</h3><p>Check out securely, then tell us about your business in a short onboarding form. We build it, you go live.</p><em class="who mono">Together</em></div></li>
+      </ol>
+      <a class="btn btn-lime magnetic" href="https://mycroi.com/start"><span>Start your site</span></a>
+    </div>
+    <div class="term" aria-label="Example of a site being built">
+      <div class="term-bar"><i></i><i></i><i></i><span class="mono">yourbusiness.mycroi.com</span></div>
+      <pre class="term-body mono" id="term"></pre>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT ADDS UP: the cycle -->
+<section class="cycle" id="cycle" data-shape="ring">
+  <div class="cycle-sticky">
+    <div class="wrap cycle-grid">
+      <div>
+        <p class="label mono">03 How it adds up</p>
+        <h2 class="h2 big"><span class="split">One job leads</span><br><span class="split lime">to the next.</span></h2>
+        <p class="muted lead">Your website brings the lead, the estimate gets approved, the job gets done and paid, and the review brings the next customer. Every step drops into myCenter, so each job makes the next one easier to win.</p>
+      </div>
+      <div class="ring" aria-hidden="true">
+        <div class="ring-core"><span class="mono small">myCenter</span><b id="ring-num">01</b></div>
+      </div>
+      <ol class="cycle-steps" id="cycle-steps">
+        <li class="is-active"><span class="mono">01</span><div><h3>Your website</h3><p>A homeowner finds you on Google. <em>In myCenter: your pages and reviews, live.</em></p></div></li>
+        <li><span class="mono">02</span><div><h3>New lead</h3><p>They send a quote request. <em>In myCenter: lead saved, text and email alert.</em></p></div></li>
+        <li><span class="mono">03</span><div><h3>Estimate approved</h3><p>They approve your estimate online. <em>In myCenter: quote moves to booked.</em></p></div></li>
+        <li><span class="mono">04</span><div><h3>Job booked</h3><p>The job lands on your calendar. <em>In myCenter: job details on the customer record.</em></p></div></li>
+        <li><span class="mono">05</span><div><h3>Invoice paid</h3><p>They pay by card or bank. <em>In myCenter: payment recorded, reminders stop.</em></p></div></li>
+        <li><span class="mono">06</span><div><h3>Review left</h3><p>They leave you a five-star review. <em>In myCenter: review request sent for you.</em></p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="work" id="work" data-shape="stars">
+  <div class="wrap">
+    <p class="label mono">04 Our work</p>
+    <h2 class="h2 big"><span class="split">Need a custom website?</span><br><span class="split lime">We build those too.</span></h2>
+    <p class="lead muted">Beyond the plans, we design and build fully custom sites by hand. Here are two we shipped. Yours could be next.</p>
+    <div class="work-grid">
+      <a class="work-card work-feature tilt" href="https://swluxurycoaches.com" target="_blank" rel="noopener">
+        <img src="/assets/work-swlc.jpg" alt="A luxury motorcoach in the Arizona desert at sunset" width="1083" height="744" loading="lazy">
+        <span class="work-meta"><span class="mono small lime">Featured build</span><b>swluxurycoaches.com</b></span>
+      </a>
+      <a class="work-card tilt" href="https://bookmysplash.com" target="_blank" rel="noopener">
+        <span class="work-type">book<br>my<br>splash</span>
+        <span class="work-meta"><span class="mono small lime">Custom site</span><b>bookmysplash.com</b></span>
+      </a>
+      <a class="work-card work-yours tilt" href="#contact">
+        <span class="work-type">Your<br>site<br>here</span>
+        <span class="work-meta"><span class="mono small lime">Coming next</span><b>yourbusiness.com</b></span>
+      </a>
+    </div>
+    <a class="btn btn-ghost magnetic" href="#contact"><span>Talk to us about a custom site</span></a>
+  </div>
+</section>
+
+<!-- APP -->
+<section class="app" id="app" data-shape="stars">
+  <div class="wrap app-grid">
+    <div>
+      <p class="label mono">Coming soon</p>
+      <h2 class="h2 big"><span class="split">myCenter,</span><br><span class="split lime">in your pocket.</span></h2>
+      <p class="lead muted">See every new lead the second it lands, send an estimate from the driveway, and check who paid before you pull away. The myCenter app for iPhone and Android is on its way.</p>
+      <ul class="app-points">
+        <li><span class="mono lime">01 · Leads</span><b>Every new lead, the second it lands.</b><span>An alert for every request from your site, with the photos they sent.</span></li>
+        <li><span class="mono lime">02 · Estimates</span><b>Send the estimate from the driveway.</b><span>Build it on the job, send it in a tap, and see when it's approved.</span></li>
+        <li><span class="mono lime">03 · Payments</span><b>Know who paid before you pull away.</b><span>Card payments, receipts and reminders in one place.</span></li>
+      </ul>
+      <p class="muted small">Until then, myCenter works in any phone browser.</p>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="phone-screen">
+        <p class="mono small muted">9:41</p>
+        <p class="ph-title">Good morning</p>
+        <div class="ph-stats"><span>New leads today<b>3</b></span><span>Pipeline<b>$8,940</b></span></div>
+        <div class="ph-feed" id="ph-feed">
+          <div class="ph-note"><b>New lead from your site</b><span>Hannah I. sent 2 photos</span></div>
+          <div class="ph-note"><b>Booking request</b><span>Tune-up, Friday at 9am</span></div>
+          <div class="ph-note"><b>Estimate 2041 approved</b><span>$695, approved online</span></div>
+          <div class="ph-note"><b>Invoice paid by card</b><span>$287, receipt sent</span></div>
+          <div class="ph-note"><b>Reminder sent</b><span>Invoice 1043, due Friday</span></div>
+        </div>
+        <p class="mono small muted center">Illustrative example</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing" data-shape="stars">
+  <div class="wrap">
+    <p class="label mono">05 Pricing</p>
+    <h2 class="h2 big"><span class="split">Simple plans.</span><br><span class="split lime">Every price on the page.</span></h2>
+    <p class="lead muted">No "call for pricing." Start where you are, move up when you need more. Pay monthly, or go yearly and get two months free.</p>
+    <div class="billing" role="group" aria-label="Billing period">
+      <button type="button" class="is-on" data-bill="m" aria-pressed="true">Monthly</button>
+      <button type="button" data-bill="y" aria-pressed="false">Yearly <em class="mono">2 months free</em></button>
+    </div>
+    <div class="plans">
+      <article class="plan" data-m="49" data-id="launch">
+        <h3>Launch</h3>
+        <p class="price"><b>$49</b><span>/mo</span></p>
+        <p class="muted">For pros who need a site and a steady flow of leads.</p>
+        <ul class="ticks"><li>Website written for your trade, four layouts</li><li>A page for every service and area</li><li>Quote form that takes photos</li><li>Free yourname.mycroi.com or your own domain</li><li>Hosting, SSL and security</li><li>Lead inbox with text and email alerts</li></ul>
+        <a class="btn btn-ghost magnetic" href="https://mycroi.com/start?plan=launch"><span>Start with Launch</span></a>
+      </article>
+      <article class="plan plan-pop" data-m="129" data-id="grow">
+        <p class="pop mono">Most popular</p>
+        <h3>Grow</h3>
+        <p class="price"><b>$129</b><span>/mo</span></p>
+        <p class="muted">For pros who quote, invoice and follow up.</p>
+        <ul class="ticks"><li>Everything in Launch</li><li>CRM, pipeline and follow-up reminders</li><li>Estimates customers approve online</li><li>Invoices with automatic reminders</li><li>Review request emails</li><li>Team members</li></ul>
+        <a class="btn btn-lime magnetic" href="https://mycroi.com/start?plan=grow"><span>Start with Grow</span></a>
+      </article>
+      <article class="plan" data-m="249" data-id="scale">
+        <h3>Scale</h3>
+        <p class="price"><b>$249</b><span>/mo</span></p>
+        <p class="muted">For pros who want to get paid online and run it all in one place.</p>
+        <ul class="ticks"><li>Everything in Grow</li><li>Customers pay invoices by card</li><li>Payments go to your own Stripe account</li><li>Booking and calendar add-ons included</li><li>Advanced reports</li><li>Priority support and onboarding call</li></ul>
+        <a class="btn btn-ghost magnetic" href="https://mycroi.com/start?plan=scale"><span>Start with Scale</span></a>
+      </article>
+    </div>
+    <p class="mono small muted fine">Cancel anytime. Hosting and SSL on every plan. Online payments carry standard card and ACH processing fees.</p>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons" id="addons" data-shape="stars">
+  <div class="wrap addons-grid">
+    <div>
+      <p class="label mono">06 Add-ons</p>
+      <h2 class="h2 big"><span class="split">Plug in more power</span><br><span class="split lime">when you need it.</span></h2>
+      <p class="lead muted">Switch on what you need, on any plan. Your build and monthly total update as you go.</p>
+      <div class="plan-pick" role="radiogroup" aria-label="Plan">
+        <label><input type="radio" name="build-plan" value="launch" data-m="49"> Launch</label>
+        <label><input type="radio" name="build-plan" value="grow" data-m="129" checked> Grow</label>
+        <label><input type="radio" name="build-plan" value="scale" data-m="249"> Scale</label>
+      </div>
+      <ul class="addon-list">
+        <li><label class="addon"><input type="checkbox" data-price="29" data-scale="1"><span class="sw"></span><span class="addon-txt"><b>Online booking</b><span>Customers pick a time on your website, day or night.</span></span><em class="mono">+$29</em></label></li>
+        <li><label class="addon"><input type="checkbox" data-price="19" data-scale="1"><span class="sw"></span><span class="addon-txt"><b>Team calendar</b><span>Every job and crew on one schedule. Syncs with Google and Apple.</span></span><em class="mono">+$19</em></label></li>
+        <li><label class="addon"><input type="checkbox" data-price="99"><span class="sw"></span><span class="addon-txt"><b>AI phone agent</b><span>Answers every call, books the job and saves the lead, even after hours.</span></span><em class="mono">+$99</em></label></li>
+        <li><label class="addon"><input type="checkbox" data-price="39"><span class="sw"></span><span class="addon-txt"><b>Auto-replies and texting</b><span>Instant replies to new leads, plus two-way texting with customers.</span></span><em class="mono">+$39</em></label></li>
+      </ul>
+    </div>
+    <aside class="build" aria-live="polite">
+      <p class="mono small muted">Your build</p>
+      <p class="build-plan" id="build-plan">Grow</p>
+      <ul class="build-items mono small" id="build-items"></ul>
+      <p class="build-total"><b id="build-total">$129</b><span>/mo</span></p>
+      <a class="btn btn-lime magnetic wide" id="build-cta" href="https://mycroi.com/start?plan=grow"><span>Get started with this build</span></a>
+    </aside>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" data-shape="stars">
+  <div class="wrap faq-grid">
+    <div>
+      <p class="label mono">07 Questions</p>
+      <h2 class="h2 big"><span class="split">Got a question?</span><br><span class="split lime">Just ask.</span></h2>
+      <a class="btn btn-ghost magnetic" href="https://mycroi.com/help"><span>Browse every answer in the help center</span></a>
+    </div>
+    <div class="qa">
+      <details><summary>Do I need a designer or developer?</summary><p>No. You tell us about your business and myCROI builds your site, written for your trade. You can change anything you like afterwards in myCenter.</p></details>
+      <details><summary>What trades do you work with?</summary><p>Home and local service businesses: HVAC, plumbing, electrical, cleaning, landscaping, roofing, pest control, pool service, handyman and detailing, from one-person crews to larger teams.</p></details>
+      <details><summary>What does each plan cost?</summary><p>Launch is $49 a month, Grow is $129 and Scale is $249. Pay yearly and you get two months free.</p></details>
+      <details><summary>Do I get a free web address?</summary><p>Yes. Every site gets a free yourname.mycroi.com address. You can use it on its own or connect your own domain later.</p></details>
+      <details><summary>Can I edit my site myself?</summary><p>Yes. In myCenter you can edit your site's pages, sections, photos and colors. You can also ask AI to rewrite one section: you see the old and new words side by side, and nothing changes until you pick the new ones.</p></details>
+      <details><summary>Will my site make things up about my business?</summary><p>No. Your site only says what you told us. It never invents reviews, guarantees, licenses or prices.</p></details>
+      <details><summary>How do my customers pay my invoices?</summary><p>On Scale, every invoice has a Pay now button. Customers pay by card on a secure page on your website and the money goes to your own Stripe account. You can also mark cash and check payments as paid.</p></details>
+      <details><summary>Can I cancel anytime?</summary><p>Yes. You can cancel anytime, from your account or by contacting us.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA -->
+<section class="cta" id="ready" data-shape="burst">
+  <div class="wrap">
+    <p class="label mono">Ready when you are</p>
+    <h2 class="cta-title"><span class="split">Stop running</span><br><span class="split">your business on</span><br><span class="split lime">sticky notes.</span></h2>
+    <p class="lead muted">Get a site that wins jobs and one place for every lead, estimate, invoice and payment, set up for you.</p>
+    <div class="hero-cta">
+      <a class="btn btn-lime magnetic big" href="https://mycroi.com/start"><span>Start your site</span></a>
+      <a class="btn btn-ghost magnetic big" href="#contact"><span>Talk to us</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" data-shape="stars">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="label mono">08 Contact</p>
+      <h2 class="h2 big"><span class="split">Let's build</span> <span class="split lime">yours.</span></h2>
+      <p class="lead muted">Tell us a little about your business. We'll reply with a plan recommendation and next steps.</p>
+      <ol class="contact-steps">
+        <li><span class="mono lime">1</span><b>You send this form</b><span>It goes straight to our team.</span></li>
+        <li><span class="mono lime">2</span><b>We reply with a plan for your trade</b><span>Plus what it costs and what is included.</span></li>
+        <li><span class="mono lime">3</span><b>We build and connect your site</b><span>You review it before it goes live.</span></li>
+      </ol>
+      <p class="muted small">No commitment to ask.</p>
+    </div>
+    <form class="form" id="contact-form" novalidate>
+      <div class="fgrid">
+        <label class="f"><span>Your name</span><input name="name" autocomplete="name" required></label>
+        <label class="f"><span>Business name</span><input name="business" autocomplete="organization" required></label>
+        <label class="f"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="f"><span>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+        <label class="f f-wide"><span>Your trade</span>
+          <select name="trade"><option value="">Choose your trade</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Cleaning</option><option>Landscaping</option><option>Roofing</option><option>Pest control</option><option>Pool service</option><option>Handyman</option><option>Detailing</option><option>Other</option></select>
+        </label>
+      </div>
+      <fieldset class="chips"><legend>Interested in</legend>
+        <label><input type="radio" name="plan" value="Launch"><span>Launch</span></label>
+        <label><input type="radio" name="plan" value="Grow"><span>Grow</span></label>
+        <label><input type="radio" name="plan" value="Scale"><span>Scale</span></label>
+        <label><input type="radio" name="plan" value="Custom site"><span>Custom site</span></label>
+        <label><input type="radio" name="plan" value="Not sure yet" checked><span>Not sure yet</span></label>
+      </fieldset>
+      <label class="f f-wide"><span>What do you need help with?</span><textarea name="message" rows="3"></textarea></label>
+      <label class="consent"><input type="checkbox" name="sms" value="1"><span><b>Text me updates and offers</b> <em class="muted">Optional</em><br>Yes, text me about my request and account, plus news and offers from myCROI. Msg frequency varies (news and offers up to 4 a month). Msg and data rates may apply. Reply HELP for help or STOP to opt out. Consent is not a condition of purchase. <a href="https://mycroi.com/sms-terms">Terms</a></span></label>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <p class="form-err" id="form-err" role="alert" hidden></p>
+      <button class="btn btn-lime magnetic wide" type="submit" id="form-btn"><span>Send message</span></button>
+      <p class="muted small">We'll only use this to reply to you. <a href="https://mycroi.com/privacy">Privacy policy</a></p>
+    </form>
+    <div class="form-ok" id="form-ok" hidden>
+      <p class="h2"><span class="lime">Got it.</span> We'll be in touch.</p>
+      <p class="muted">Watch your inbox for your plan recommendation.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <p class="foot-claim">There is<br><span class="lime">only you.</span></p>
+      <div class="foot-cols">
+        <nav aria-label="Pages"><p class="mono small muted">Pages</p><a href="#pricing">Pricing</a><a href="#contact">Contact</a><a href="https://mycroi.com/whats-new">What's new</a><a href="https://mycroi.com/center/">myCenter login</a><a href="#top">Back to top</a></nav>
+        <nav aria-label="Trades"><p class="mono small muted">Built for</p><a href="https://mycroi.com/hvac">HVAC</a><a href="https://mycroi.com/plumbing">Plumbing</a><a href="https://mycroi.com/electrical">Electrical</a><a href="https://mycroi.com/cleaning">Cleaning</a><a href="https://mycroi.com/landscaping">Landscaping</a><a href="https://mycroi.com/roofing">Roofing</a><a href="https://mycroi.com/pest-control">Pest control</a><a href="https://mycroi.com/pool-service">Pool service</a><a href="https://mycroi.com/handyman">Handyman</a><a href="https://mycroi.com/detailing">Detailing</a></nav>
+        <nav aria-label="Help"><p class="mono small muted">Help</p><a href="https://mycroi.com/help">Help center</a><a href="https://mycroi.com/privacy">Privacy policy</a><a href="https://mycroi.com/refunds">Refund policy</a><a href="https://mycroi.com/sms-terms">Text message terms</a></nav>
+      </div>
+    </div>
+    <p class="foot-word" aria-hidden="true">myCROI</p>
+    <p class="foot-legal mono small muted">© 2026 myCROI LLC. There is only you.</p>
+  </div>
+</footer>
+
+<script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="/assets/site.js"></script>
+</body>
+</html>
