@@ -9,7 +9,6 @@ const html = `<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com">
-<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -213,40 +212,6 @@ button, input, select, textarea { font: inherit; }
 .close-inner h2 { font-size: var(--text-display-s); }
 .close-inner .btn { grid-column: 9 / span 4; justify-self: end; }
 
-/* scrollytelling: 3D coach turned by scroll (public/story.js) */
-.story { position: relative; background: var(--color-ink); }
-.story-stage { position: sticky; top: var(--nav-h); z-index: 0; height: calc(100svh - var(--nav-h)); overflow: hidden; background: var(--color-ink); pointer-events: none; }
-.story-canvas { position: absolute; inset: 0; }
-.story-canvas canvas { display: block; width: 100%; height: 100%; }
-.story-note { position: absolute; left: var(--gutter); bottom: var(--space-md); color: var(--color-paper-3); font-size: var(--text-sm); }
-.story-exit { display: none; position: absolute; right: var(--gutter); bottom: var(--space-md); background: var(--color-paper); }
-.story-stage.free { z-index: 2; pointer-events: auto; }
-.story-stage.free .story-canvas { touch-action: none; cursor: grab; }
-.story-stage.free .story-exit { display: inline-flex; }
-.story-chapters { position: relative; z-index: 1; margin-top: calc(var(--nav-h) - 100svh); pointer-events: none; }
-.story-chap { min-height: 90svh; display: flex; align-items: center; }
-.story-chap .container { pointer-events: none; }
-.story-card { grid-column: 1 / span 5; pointer-events: auto; position: relative; padding: var(--space-xl); border-radius: 2px; display: grid; gap: var(--space-md); justify-items: start; background: var(--fibre) 0 0 / 220px, linear-gradient(160deg, var(--card-lit), var(--color-card) 55%, var(--card-shade)); box-shadow: var(--shadow-card), inset 1px 1px 0 var(--lit); }
-.story-card::before { content: ""; position: absolute; inset: 0.875rem; border: var(--rule-hair) solid var(--color-card-edge); pointer-events: none; }
-.story-card > * { position: relative; }
-.story-chap:nth-child(even) .story-card { grid-column: 8 / span 5; }
-.story-card h2 { font-size: var(--text-display-s); }
-.story-controls { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
-.story-controls .btn { min-height: 44px; }
-.story-controls .btn[aria-pressed="true"] { background: var(--color-ink); color: var(--color-paper); }
-.story:not(.story--live) .story-controls { display: none; }
-.story--off .story-stage { display: none; }
-.story--off .story-chapters { margin-top: 0; }
-.story--off .story-chap { min-height: 0; padding-block: var(--space-xl); }
-.story--static .story-stage { position: relative; top: auto; height: 60svh; }
-.story--static .story-chapters { margin-top: 0; }
-.story--static .story-chap { min-height: 0; padding-block: var(--space-xl); }
-@media (max-width: 60rem) {
-  .story-chap { min-height: 100svh; align-items: flex-end; padding-bottom: var(--space-lg); }
-  .story-card, .story-chap:nth-child(even) .story-card { grid-column: 1 / -1; padding: var(--space-lg); }
-  .story-card h2 { font-size: var(--text-2xl); }
-  .story-note { display: none; }
-}
 /* footer */
 .sfoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-md) var(--space-lg); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-muted); font-size: var(--text-sm); }
 .flinks { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); }
@@ -425,43 +390,6 @@ button, input, select, textarea { font: inherit; }
 </div></section>
 </main>
 
-<section class="story" id="story" aria-label="A 3D look at a motorcoach">
-  <div class="story-stage" id="story-stage">
-    <div class="story-canvas" id="story-canvas" role="img" aria-label="3D model of a luxury motorcoach that turns as you scroll"></div>
-    <p class="story-note">Illustrative 3D model, not your coach.</p>
-    <button class="btn story-exit" id="story-exit" type="button">Leave 360 view</button>
-  </div>
-  <div class="story-chapters">
-    <article class="story-chap"><div class="container grid12"><div class="story-card">
-      <h2>We come to you.</h2>
-      <p>Free nationwide pickup. Wherever you are, we come to you.</p>
-    </div></div></article>
-    <article class="story-chap"><div class="container grid12"><div class="story-card">
-      <h2>Every detail counts.</h2>
-      <p>Our experience and nationwide network help us see the real value in your coach.</p>
-    </div></div></article>
-    <article class="story-chap"><div class="container grid12"><div class="story-card">
-      <h2>You stay in control.</h2>
-      <p>You keep physical possession and title until you are satisfied with funding.</p>
-    </div></div></article>
-    <article class="story-chap"><div class="container grid12"><div class="story-card">
-      <h2>Inside and out.</h2>
-      <p>Tell us the year, make, model and mileage. Add a photo if you have one.</p>
-      <a class="btn" href="#offer">Get my cash offer</a>
-    </div></div></article>
-    <article class="story-chap"><div class="container grid12"><div class="story-card">
-      <h2>Take a closer look.</h2>
-      <p>Switch the headlights, open the slide-outs and the hood, or turn the coach yourself.</p>
-      <div class="story-controls">
-        <button class="btn" id="story-lights" type="button">Headlights</button>
-        <button class="btn" id="story-slide" type="button">Slide-outs</button>
-        <button class="btn" id="story-hood" type="button">Hood</button>
-        <button class="btn" id="story-free" type="button" aria-pressed="false">Rotate 360 degrees</button>
-      </div>
-    </div></div></article>
-  </div>
-</section>
-
 <section class="sec band3" id="contact"><div class="container close-inner">
   <div class="r"><h2>New roads are waiting.</h2><p class="lead">Let’s make selling your RV the easy part.</p></div>
   <a class="btn" href="tel:8008631848">Let’s talk: 800-863-1848</a>
@@ -501,7 +429,6 @@ f.onsubmit=function(e){e.preventDefault();if(step===0){nx.click();return}if(send
 fetch('/api/lead',{method:'POST',body:new FormData(f)}).then(function(r){if(!r.ok)throw new Error('send');f.hidden=true;document.getElementById('ok').hidden=false;document.getElementById('ok').scrollIntoView({block:'center'})}).catch(function(){sending=false;nx.disabled=false;document.getElementById('nxl').textContent='Get my cash offer';err.textContent='We couldn’t send your request. Please try again or call 800-863-1848.';err.hidden=false})};
 go(0);
 </script>
-<script src="/story.js" defer></script>
 </body>
 </html>
 `;
